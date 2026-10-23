@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173c31">
+<meta name="description" content="A practical, interactive quiz on TV UX and OTT design. 40 scenario-based questions, 10 topics, instant explanations, and focused practice.">
+<title>Focus — The TV & OTT UX Quiz</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173c31'/%3E%3Cpath d='M18 27v-9h9m10 0h9v9m0 10v9h-9m-10 0h-9v-9' stroke='%23d4ed92' stroke-width='5' fill='none'/%3E%3C/svg%3E">
+<style>
+:root{--paper:#f5f6f0;--white:#fff;--ink:#17372e;--sub:#5b6b63;--line:#dce2d7;--green:#173c31;--lime:#d6ee98;--soft:#eaf0df;--red:#a4372c;--red-bg:#fff1ed;--success:#1d6441;--shadow:0 20px 65px #16372a0b;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}a{color:inherit;text-underline-offset:4px}button{color:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #52772b;outline-offset:5px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.15}button,summary{touch-action:manipulation}svg{display:inline-block;vertical-align:middle}.icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.wrap{max-width:1200px;margin:0 auto;padding:0 40px}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:fixed;top:-100px;left:24px;z-index:200;background:var(--green);color:#fff;padding:12px 20px;border-radius:8px}.skip:focus{top:12px}.topbar{height:96px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;background:none;border:0;padding:4px 0;text-decoration:none;font-weight:800;font-size:26px;letter-spacing:-1.2px}.brand-mark{background:var(--green);color:var(--lime);width:36px;height:36px;border-radius:10px;display:grid;place-items:center}.brand-mark .icon{width:23px;height:23px;stroke-width:2}.brand small{font-size:10px;letter-spacing:1.8px;font-weight:700;border-left:1px solid #c5cfc1;padding-left:14px;margin-left:5px;color:var(--sub);line-height:1.6}.nav{display:flex;gap:10px}.text-btn{background:none;border:0;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;font-size:13px;font-weight:600;min-height:44px}.text-btn:hover{background:#e7ecdf}.text-btn .icon{width:17px;height:17px}.eyebrow{text-transform:uppercase;letter-spacing:1.8px;font-size:10px;font-weight:800;display:flex;align-items:center;gap:9px}.live-dot{width:7px;height:7px;border-radius:50%;background:#6f9238;display:inline-block}.hero{padding:61px 0 40px;display:grid;grid-template-columns:1.16fr 1fr;align-items:center;gap:54px}.hero h1{font-size:clamp(44px,4.8vw,66px);letter-spacing:-3.8px;font-weight:650;line-height:1.06;margin:21px 0}.hero h1 em{font-family:Georgia,serif;font-weight:400;letter-spacing:-2.5px;color:#557336}.hero-copy{max-width:460px;color:var(--sub);font-size:15px;line-height:1.8}.hero-tags{display:flex;gap:17px;flex-wrap:wrap;margin-top:23px;font-size:11px;font-weight:600;color:var(--sub)}.hero-tags span{display:flex;gap:6px;align-items:center}.hero-tags .icon{width:14px;height:14px}.hero-art{height:325px;border-radius:24px;position:relative;background:#e3ebd5;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #dce5cf;isolation:isolate}.art-grid{position:absolute;inset:0;background-image:linear-gradient(#809b5b12 1px,transparent 1px),linear-gradient(90deg,#809b5b12 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse,black,transparent 75%)}.art-orbit{position:absolute;width:290px;height:290px;border-radius:50%;border:1px solid #b8c8a5;transform:rotate(-20deg) scaleX(1.3)}.art-orbit:after{content:"";position:absolute;inset:30px;border:1px solid #c1cfaf;border-radius:50%}.art-label{position:absolute;top:23px;left:25px;font-size:8px;letter-spacing:1.9px;font-weight:800;color:#677954}.tv{position:relative;width:79%;height:191px;margin-top:-10px;transform:rotate(-4deg);background:#102c26;border:6px solid #234238;border-radius:11px;box-shadow:8px 17px 20px #173c3123;overflow:hidden}.tv-top{height:27px;background:#10271f;display:flex;align-items:center;justify-content:space-between;padding:0 10px;color:#b6cbb7;font-size:7px;letter-spacing:.5px}.tv-top strong{color:var(--lime);font-size:9px}.tv-body{padding:16px 17px}.tv-body small{color:#b9cfb5;font-size:6px;letter-spacing:1.5px}.tv-title{font-family:Georgia,serif;font-size:23px;color:#eff4e5;line-height:1.1;margin:5px 0 12px;letter-spacing:-.5px}.tv-cards{display:flex;gap:8px;height:59px}.mini-poster{flex:1;border-radius:3px;position:relative;overflow:hidden;background:#5d7c61}.mini-poster:nth-child(2){background:#a19775}.mini-poster:nth-child(3){background:#374f5a}.mini-poster:nth-child(4){background:#768866}.mini-poster:after{content:"";position:absolute;inset:14px -13px -30px;background:#162e2d80;transform:rotate(-27deg);border-radius:50% 70% 0 0}.mini-poster:before{content:"";position:absolute;right:12px;top:8px;width:14px;height:14px;border-radius:50%;background:#dfe4ad99}.mini-poster.focused{outline:2px solid #d8ee97;outline-offset:3px;z-index:2;transform:scale(1.06)}.focus-chip{position:absolute;top:75px;right:15px;z-index:3;background:var(--lime);color:var(--ink);padding:8px 12px;border:1px solid #c3db83;box-shadow:0 5px 15px #173c3110;display:flex;gap:7px;align-items:center;border-radius:7px;transform:rotate(3deg);font-size:9px;font-weight:700}.focus-chip .icon{width:12px;height:12px}.remote{position:absolute;bottom:23px;right:47px;width:43px;height:151px;background:#f5f7ee;border:1px solid #c5d0b8;border-radius:24px;transform:rotate(18deg);box-shadow:5px 7px 14px #28413126;display:flex;align-items:center;flex-direction:column;padding:14px 0;gap:9px}.remote-dot{width:5px;height:5px;border:1px solid #718269;border-radius:50%}.remote-pad{width:30px;height:30px;border-radius:50%;background:#d5dfc8;border:1px solid #b7c7a5;display:grid;place-items:center}.remote-center{width:11px;height:11px;border-radius:50%;background:#a0b28b}.remote-key{width:9px;height:4px;background:#becbb0;border-radius:3px}.remote-bottom{display:grid;grid-template-columns:1fr 1fr;gap:7px}.art-caption{position:absolute;bottom:22px;left:25px;color:#536a4d;font-size:9px;line-height:1.6;max-width:200px}.art-caption strong{font-size:10px;color:#254434}.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);padding:24px 0 27px;border-bottom:1px solid var(--line);gap:22px}.stat{display:flex;align-items:center;gap:13px}.stat-value{font-family:Georgia,serif;font-size:29px;letter-spacing:-1px}.stat-label{font-size:9px;color:var(--sub);line-height:1.6;letter-spacing:1.1px;text-transform:uppercase;font-weight:650}.section-top{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-bottom:21px}.section-top h2{font-size:24px;letter-spacing:-.7px}.section-top p{font-size:12px;color:var(--sub)}.setup{padding:42px 0 36px}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mode-card{position:relative;text-align:left;padding:23px 22px;background:#fbfcf8;border:1px solid var(--line);border-radius:14px;transition:background .15s,border-color .15s;display:flex;flex-direction:column;gap:12px;min-height:173px}.mode-card:hover{border-color:#7b9368;background:#f0f4e7}.mode-card[aria-checked=true]{border:1.5px solid var(--green);background:#eaf0df;padding:22.5px 21.5px}.mode-top{display:flex;justify-content:space-between;align-items:center}.mode-card .icon{width:22px;height:22px}.radio-mark{width:17px;height:17px;border:1px solid #abb8a1;border-radius:50%;display:grid;place-items:center}.mode-card[aria-checked=true] .radio-mark{border-color:var(--green)}.mode-card[aria-checked=true] .radio-mark:after{content:"";width:7px;height:7px;background:var(--green);border-radius:50%}.mode-card h3{font-size:17px;letter-spacing:-.35px}.mode-card p{font-size:11px;color:var(--sub);margin-top:4px}.mode-meta{font-size:10px;font-weight:650;display:flex;gap:7px;align-items:center;color:#46633f}.mode-meta i{height:3px;width:3px;border-radius:50%;background:#9aaa8e}.setup-bottom{display:flex;justify-content:space-between;gap:22px;align-items:center;margin-top:23px}.feedback-setting{display:flex;align-items:center;gap:15px}.segmented{display:inline-flex;padding:4px;background:#e9ede2;border-radius:9px;gap:2px}.segment{border:0;padding:9px 15px;background:transparent;border-radius:6px;color:var(--sub);font-weight:600;font-size:11px;min-height:36px}.segment[aria-checked=true]{background:#fff;color:var(--ink);box-shadow:0 1px 5px #173c310c}.setting-note{font-size:10px;color:var(--sub);max-width:135px;line-height:1.5}.primary{background:var(--green);color:#fff;border:1px solid var(--green);padding:13px 21px;border-radius:9px;font-size:12px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:48px;transition:background .15s,transform .15s}.primary:hover{background:#285244}.primary:active{transform:translateY(1px)}.primary:disabled{background:#dfe5d7;border-color:#dfe5d7;color:#66745c}.primary .icon{width:18px;height:18px}.secondary{background:transparent;border:1px solid #b5c2aa;min-height:46px;padding:11px 17px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:12px;font-weight:600}.secondary:hover{background:#e8eedf}.topic-picker{margin-top:17px;background:#edf1e5;padding:20px;border-radius:12px}.topic-picker p{font-size:12px;margin-bottom:12px}.topic-chips{display:flex;flex-wrap:wrap;gap:8px}.topic-chip{background:#fafbf6;border:1px solid #cbd6bf;border-radius:7px;padding:8px 11px;font-size:11px;min-height:38px}.topic-chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.resume-box{background:#fff;border:1px solid #c7d3ba;border-left:4px solid #658444;border-radius:12px;padding:17px 21px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px;box-shadow:var(--shadow)}.resume-box strong{font-size:13px;display:block}.resume-box p{font-size:11px;color:var(--sub);margin-top:3px}.resume-actions{display:flex;gap:7px}.resume-actions button{font-size:11px}.syllabus{padding:31px 0 43px;border-top:1px solid var(--line)}.syllabus-head{margin-bottom:21px}.syllabus-head .eyebrow{color:var(--sub);font-size:9px}.topic-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}.topic-tile{text-align:left;background:transparent;border:1px solid var(--line);border-radius:11px;padding:17px 14px 18px;min-height:125px;transition:background .15s}.topic-tile:hover{background:#eaf0df;border-color:#a4b88f}.topic-num{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;font-size:9px;color:#627358}.topic-num .icon{width:18px;height:18px;color:#3c593c}.topic-tile h3{font-size:11px;margin-bottom:7px}.topic-tile p{font-size:10px;line-height:1.5;color:var(--sub)}.bottom-note{padding:22px 0 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--sub)}.bottom-note button{font-size:10px;min-height:auto;padding:0}.bottom-note .icon{width:13px;height:13px}.no-js{padding:25px;background:#fff1d7;border:1px solid #d6bb72;margin:25px 0}.quiz-intro{display:flex;align-items:center;justify-content:space-between;padding:27px 0 19px;gap:20px}.crumb{font-size:12px;color:var(--sub);display:flex;gap:11px;align-items:center}.crumb strong{color:var(--ink);font-weight:600}.crumb .icon{width:13px;height:13px}.session-layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:34px;padding:13px 0 55px}.side-panel{padding-top:4px}.side-panel .eyebrow{font-size:9px;color:var(--sub);margin-bottom:18px}.topic-track{display:flex;flex-direction:column;gap:5px}.track-row{display:flex;align-items:center;gap:10px;padding:11px 10px;border-radius:8px;font-size:11px;color:var(--sub);border:1px solid transparent}.track-row .icon{width:16px;height:16px}.track-row.active{background:#e5edd7;color:var(--ink);border-color:#d8e3c7}.track-row.done{color:#53723b}.track-row span{flex:1}.track-row small{font-size:9px;white-space:nowrap}.side-note{border-top:1px solid var(--line);padding:20px 10px;margin-top:20px;color:var(--sub);font-size:11px;line-height:1.7}.side-note strong{display:block;color:var(--ink);font-size:12px;margin-bottom:7px}.quiz-main{min-width:0}.progress-head{display:flex;align-items:center;justify-content:space-between;font-size:11px;margin-bottom:11px;color:var(--sub)}.progress-head strong{font-size:12px;color:var(--ink)}.progress-track{height:5px;border-radius:3px;background:#e0e6d8;overflow:hidden;margin-bottom:24px}.progress-fill{height:100%;background:#6b8b3c;transition:width .3s;border-radius:3px}.question-card{background:#fff;border:1px solid #e0e6d9;border-radius:18px;padding:31px;box-shadow:var(--shadow)}.question-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px}.pill{font-size:9px;background:#edf2e3;padding:6px 9px;border-radius:5px;font-weight:650;display:inline-flex;align-items:center;gap:6px}.pill .icon{width:13px;height:13px}.question-kicker{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--sub)}.question-title{font-size:23px;letter-spacing:-.65px;line-height:1.4;max-width:650px;outline:none}.question-hint{font-size:11px;color:var(--sub);margin-top:12px;margin-bottom:22px}.answers{display:flex;flex-direction:column;gap:10px}.answer{display:flex;align-items:center;gap:14px;width:100%;padding:15px 16px;background:#fafbf7;border:1px solid #dee5d7;border-radius:10px;text-align:left;min-height:64px;font-size:12px;line-height:1.65;transition:background .15s,border-color .15s}.answer:hover:not([aria-disabled=true]){border-color:#7c9864;background:#f1f6e8}.answer[aria-checked=true]{border:1.5px solid #476a36;background:#edf4df;padding:14.5px 15.5px}.answer-letter{width:28px;height:28px;display:grid;place-items:center;border:1px solid #d5dfcc;flex-shrink:0;border-radius:6px;font-size:10px;font-weight:700;background:#fff}.answer-label{flex:1}.answer-state{font-size:9px;font-weight:700;display:flex;gap:4px;align-items:center;flex-shrink:0}.answer-state .icon{width:15px;height:15px}.answer.correct{border-color:#558367;background:#edf7ee;color:#174c31}.answer.correct .answer-letter{background:#265e3c;color:white;border-color:#265e3c}.answer.wrong{border-color:#cf897c;background:var(--red-bg);color:#8b342a}.answer.wrong .answer-letter{background:#9b4335;color:white;border-color:#9b4335}.feedback{margin-top:22px;padding:21px;border:1px solid #d4e3ca;background:#f0f6e9;border-radius:11px;font-size:12px;line-height:1.8;outline:none}.feedback.wrong-feedback{background:#fcf6ec;border-color:#e9d9bd}.feedback h3{font-size:14px;display:flex;gap:8px;align-items:center;margin-bottom:9px}.feedback p{color:#465c42}.takeaway{padding-top:12px;margin-top:12px;border-top:1px solid #d6e0cb;font-size:11px;font-weight:650;color:#294929}.question-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px}.question-footer .secondary{border-color:transparent;padding-left:0}.question-footer .secondary:disabled{opacity:.35}.saved-caption{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:10px;color:var(--sub);margin-top:15px}.saved-caption .icon{width:13px;height:13px}.mini-map{display:flex;gap:5px;flex-wrap:wrap;margin-top:23px}.map-dot{height:28px;min-width:28px;padding:0 5px;border:1px solid #cdd8c3;border-radius:5px;font-size:9px;background:transparent;color:var(--sub);display:grid;place-items:center}.map-dot[aria-current=step]{outline:2px solid #3a5c2c;outline-offset:2px}.map-dot.answered{background:#dce8c9;border-color:#b4c79b;color:#294b23}.map-dot.is-right{background:#d8eedb;border-color:#a6c7ab;color:#215333}.map-dot.is-wrong{background:#f8e0d6;border-color:#d9afa0;color:#823c2d}.results{max-width:900px;margin:0 auto;padding:46px 0 60px}.result-hero{display:grid;grid-template-columns:155px 1fr;gap:35px;align-items:center;padding:33px;border:1px solid #d8e2cc;background:#eaf0df;border-radius:21px}.score-ring{width:145px;height:145px;border-radius:50%;position:relative;display:grid;place-items:center;background:conic-gradient(#2d5635 var(--score),#d2ddc4 0)}.score-ring:before{content:"";position:absolute;inset:8px;border-radius:50%;background:#eaf0df}.score-content{position:relative;text-align:center}.score-number{font-family:Georgia,serif;font-size:43px;line-height:1.1;letter-spacing:-2px}.score-caption{font-size:10px;color:var(--sub)}.result-copy .eyebrow{font-size:9px;margin-bottom:12px}.result-copy h1{font-size:31px;letter-spacing:-1px;margin-bottom:10px}.result-copy p{color:var(--sub);font-size:12px;line-height:1.8;max-width:480px}.result-counts{display:flex;gap:23px;margin-top:15px;font-size:11px}.result-counts strong{margin-right:4px}.results-actions{display:flex;gap:10px;flex-wrap:wrap;margin:23px 0 35px}.breakdown{margin-bottom:34px}.breakdown h2,.review-header h2{font-size:21px;letter-spacing:-.5px}.breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px 25px;margin-top:20px}.breakdown-item{padding:12px 15px;border:1px solid var(--line);border-radius:9px;background:#fbfcf8}.breakdown-label{display:flex;justify-content:space-between;gap:15px;font-size:11px;margin-bottom:8px}.breakdown-bar{height:4px;border-radius:3px;background:#e2e8d9;overflow:hidden}.breakdown-bar span{display:block;height:100%;background:#729547}.review-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:25px 0 19px}.review-tabs{display:flex;gap:6px}.review-tab{padding:8px 12px;font-size:10px;border:1px solid #ccd6c2;background:transparent;border-radius:7px;min-height:36px}.review-tab[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.review-list{display:flex;flex-direction:column;gap:11px}.review-item{border:1px solid #dce3d4;border-radius:11px;background:#fcfdf9;overflow:hidden}.review-item summary{display:flex;align-items:flex-start;gap:12px;cursor:pointer;list-style:none;padding:18px;font-size:12px;line-height:1.65}.review-item summary::-webkit-details-marker{display:none}.review-symbol{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;margin-top:2px;background:#dcebd4;color:#235134}.review-symbol.missed{background:#f4e1d8;color:#933a2b}.review-symbol .icon{width:13px;height:13px}.review-summary{flex:1}.review-summary small{display:block;color:var(--sub);font-size:9px;margin-bottom:4px}.review-chevron{margin-top:5px;width:15px;height:15px}.review-item[open] .review-chevron{transform:rotate(180deg)}.review-body{padding:0 19px 21px 52px;font-size:12px;line-height:1.8}.review-answer{margin-bottom:12px;padding:11px 14px;background:#eef4e6;border-radius:6px}.review-answer.missed{background:#fbede6;color:#8d3e30}.review-answer strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px}.review-body>p{color:#50624a;margin:12px 0}.review-body .takeaway{margin-top:14px}.empty-review{padding:25px;border:1px solid var(--line);border-radius:12px;font-size:12px;background:#edf3e5}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);padding:12px 20px;background:#173c31;color:#fff;font-size:12px;border-radius:10px;box-shadow:0 6px 30px #173c3130;z-index:100;max-width:calc(100vw - 30px);text-align:center}.dialog{width:min(620px,calc(100% - 32px));max-height:85vh;padding:0;background:var(--paper);color:var(--ink);border:1px solid #d1ddc4;border-radius:20px;box-shadow:0 30px 120px #071e2555}.dialog::backdrop{background:#102d2759;backdrop-filter:blur(5px)}.dialog-head{padding:24px 27px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px}.dialog-head h2{font-size:21px;letter-spacing:-.5px}.close-btn{border:1px solid #d3ddca;width:34px;height:34px;border-radius:50%;background:transparent;display:grid;place-items:center;padding:0}.close-btn .icon{width:15px;height:15px}.dialog-content{padding:25px 27px 30px;font-size:12px;line-height:1.85}.dialog-content p+p{margin-top:15px}.dialog-content h3{font-size:14px;margin:22px 0 10px}.dialog-content h3:first-child{margin-top:0}.dialog-content ul{padding-left:19px}.dialog-content li{padding-left:3px;margin:8px 0}.source-link{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:11px}.source-link:hover{text-decoration:underline}.source-link .icon{width:14px;height:14px}.source-link small{display:block;color:var(--sub);font-size:9px;margin-top:2px}.note-box{padding:14px 17px;background:#e9efdf;border-radius:9px;font-size:11px;margin-top:19px}.keys{display:grid;grid-template-columns:100px 1fr;gap:9px 15px;align-items:start;font-size:11px}.keys kbd{display:inline-block;font:10px ui-monospace,monospace;background:white;border:1px solid #c5d0bc;box-shadow:0 2px 0 #d9e1d1;border-radius:4px;padding:2px 6px;margin-right:3px}.text-link{border:0;background:none;padding:0;text-decoration:underline;text-underline-offset:3px;font-size:inherit}.dialog-map{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:20px 0}.dialog-map .map-dot{height:40px}.map-legend{font-size:10px;color:var(--sub)}
+@media(min-width:1440px){.wrap{max-width:1280px}.hero{gap:75px;padding-top:72px;padding-bottom:48px}.hero h1{font-size:72px}.hero-art{height:350px}.tv{height:205px}.tv-body{padding:18px}.tv-cards{height:65px}}
+@media(max-width:1000px){.wrap{padding:0 27px}.hero{gap:30px}.hero h1{font-size:51px;letter-spacing:-2.6px}.hero-art{height:295px}.tv{height:177px}.tv-body{padding:12px}.tv-cards{height:53px}.topic-grid{grid-template-columns:repeat(5,1fr)}.topic-tile{padding:14px 10px}.session-layout{grid-template-columns:185px minmax(0,1fr);gap:22px}.question-card{padding:25px}.setting-note{display:none}.question-title{font-size:21px}}
+@media(max-width:760px){.wrap{padding:0 21px}.topbar{height:78px}.brand{font-size:24px}.brand small{display:none}.nav{gap:0}.nav .text-btn{font-size:11px;padding:8px}.nav .text-btn .icon{width:15px;height:15px}.hero{grid-template-columns:1fr;gap:27px;padding:35px 0 24px}.hero h1{font-size:53px;margin:18px 0;letter-spacing:-3px}.hero-copy{max-width:510px;font-size:14px}.hero-art{height:275px;max-width:510px;width:100%;justify-self:center}.tv{width:78%;max-width:355px;height:181px}.art-caption{bottom:16px}.remote{right:50px;bottom:15px;height:137px}.focus-chip{top:57px;right:20px}.art-label{top:17px}.hero-tags{margin-top:18px}.stats-bar{gap:13px;grid-template-columns:repeat(2,1fr);padding:19px 0 23px;row-gap:14px}.stat{gap:11px}.stat-value{font-size:27px}.stat-label{font-size:8px;max-width:130px}.setup{padding:29px 0}.section-top{align-items:flex-start;flex-direction:column;gap:7px}.section-top h2{font-size:23px}.mode-grid{gap:8px}.mode-card{padding:15px 11px;min-height:166px;gap:16px}.mode-card[aria-checked=true]{padding:14.5px 10.5px}.mode-card h3{font-size:14px}.mode-card p{font-size:10px;line-height:1.6}.mode-meta{font-size:8px;gap:4px}.mode-card .icon{width:19px;height:19px}.radio-mark{width:14px;height:14px}.setup-bottom{align-items:stretch;flex-direction:column;gap:18px}.feedback-setting{justify-content:space-between}.setting-note{display:block;max-width:155px}.setup-bottom .primary{width:100%;justify-content:space-between;padding-left:21px}.topic-grid{grid-template-columns:repeat(2,1fr);gap:10px}.topic-tile{padding:16px;min-height:115px}.topic-tile h3{font-size:12px}.topic-tile p{font-size:10px}.topic-num{margin-bottom:15px}.syllabus{padding-top:25px}.syllabus-head{align-items:center;flex-direction:row}.syllabus-head h2{font-size:20px}.syllabus-head .eyebrow{font-size:8px;letter-spacing:1px}.bottom-note{font-size:9px;padding-top:20px;gap:12px;flex-wrap:wrap}.bottom-note button{font-size:9px}.resume-box{padding:15px;align-items:flex-start;flex-direction:column;gap:12px}.resume-actions{width:100%}.resume-actions .primary{flex:1}.session-layout{grid-template-columns:1fr;padding-bottom:30px}.side-panel{display:none}.quiz-intro{padding:20px 0 12px}.crumb{font-size:10px;gap:7px}.crumb>span,.crumb>.icon{display:none}.quiz-intro .text-btn{font-size:10px;padding:8px;white-space:nowrap}.question-card{padding:21px 18px;border-radius:14px}.question-title{font-size:21px;line-height:1.45;letter-spacing:-.5px}.question-meta{margin-bottom:16px}.question-kicker{font-size:8px;letter-spacing:.4px}.pill{font-size:8px;padding:5px 7px}.answer{padding:13px 11px;gap:10px;font-size:12px}.answer[aria-checked=true]{padding:12.5px 10.5px}.answer-letter{width:25px;height:25px}.answer-state span{display:none}.answer-state .icon{width:16px;height:16px}.question-footer{margin-top:22px}.question-footer .primary{padding:12px 15px;gap:12px}.feedback{padding:17px 15px;font-size:12px}.saved-caption{font-size:9px;gap:12px}.saved-caption .keyboard-hint{display:none}.mini-map{margin-top:18px;gap:7px}.map-dot{min-width:30px;height:30px}.progress-track{margin-bottom:19px}.result-hero{grid-template-columns:1fr;padding:27px 23px;gap:20px;text-align:center}.score-ring{margin:auto;width:135px;height:135px}.result-copy .eyebrow{justify-content:center}.result-copy h1{font-size:28px}.result-copy p{margin:auto}.result-counts{justify-content:center;gap:15px}.results{padding-top:26px}.results-actions{gap:8px;margin-bottom:27px}.results-actions button{flex:1;font-size:11px;padding:11px 12px;white-space:nowrap}.results-actions .primary{flex-basis:100%;justify-content:space-between}.breakdown-grid{grid-template-columns:1fr;gap:8px}.review-header{align-items:flex-start;flex-direction:column}.review-item summary{padding:15px 13px;font-size:12px;gap:9px}.review-body{padding:0 15px 18px}.review-tabs{width:100%}.review-tab{flex:1;min-height:40px}.dialog-head{padding:20px}.dialog-content{padding:21px}.dialog-head h2{font-size:19px}.keys{grid-template-columns:94px 1fr;gap:9px}.toast{font-size:11px;bottom:15px}}
+@media(max-width:370px){.wrap{padding:0 15px}.hero h1{font-size:46px}.nav .text-btn{font-size:10px;padding:7px}.nav .text-btn .icon{display:none}.mode-card h3{font-size:12px}.mode-card{padding:14px 9px}.mode-card[aria-checked=true]{padding:13.5px 8.5px}.mode-meta i{display:none}.mode-meta{flex-direction:column;align-items:flex-start;gap:1px}.answer{font-size:11px}.remote{right:28px}.hero-art{height:260px}.tv{width:81%}}
+
+@media(max-width:480px){
+.mode-grid{grid-template-columns:1fr;gap:10px}
+.mode-card{display:grid;grid-template-columns:27px 1fr 18px;gap:6px 12px;min-height:0;padding:17px;align-items:center}
+.mode-card[aria-checked=true]{padding:16.5px}
+.mode-top{display:contents}
+.mode-top>.icon{grid-row:1;grid-column:1;width:21px;height:21px}
+.mode-top>.radio-mark{grid-row:1;grid-column:3;justify-self:end;width:17px;height:17px}
+.mode-card>div:not(.mode-top){grid-column:2;grid-row:1}
+.mode-card h3{font-size:15px}
+.mode-card p{font-size:11px;margin-top:3px}
+.mode-meta{grid-column:2;grid-row:2;font-size:10px;display:flex;flex-direction:row;gap:7px;align-items:center}
+.mode-meta i{display:block}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{.topbar,.nav,.bottom-note,.results-actions,.review-tabs,.toast,.skip,dialog{display:none!important}body{background:white;color:#111}.wrap{max-width:100%;padding:0}.results{max-width:100%;padding:0}.result-hero{break-inside:avoid}.review-item{break-inside:avoid}.review-body{display:block}.review-list{gap:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<symbol id="i-focus" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5m0 6v5h-5m-6 0H4v-5"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M3 4c4-1 6-1 9 1 3-2 5-2 9-1v15c-4-1-6-1-9 1-3-2-5-2-9-1Z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3v.1"/></symbol>
+<symbol id="i-navigation" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18m-12-6 3-3 3 3m-9 3-3 3 3 3m3 3 3 3 3-3m3-9 3 3-3 3"/></symbol>
+<symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4Z"/></symbol>
+<symbol id="i-live" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M7 7a7 7 0 0 0 0 10M17 7a7 7 0 0 1 0 10M4 4a11 11 0 0 0 0 16M20 4a11 11 0 0 1 0 16"/></symbol>
+<symbol id="i-devices" viewBox="0 0 24 24"><rect x="2" y="4" width="15" height="12" rx="2"/><path d="M6 20h7m-4-4v4"/><rect x="17" y="10" width="5" height="11" rx="1"/></symbol>
+<symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="m4 9 8 2 8-2m-8 2v5m0 0-4 6m4-6 4 6"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M8 15l4-5 4 2 5-7"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7Z"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 14-3l2 3M20 3v6h-6m6 6a8 8 0 0 1-14 3l-2-3m0 6v-6h6"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7L10 14m-1-9H4v15h15v-5"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+</defs>
+</svg>
+<div class="wrap">
+<header class="topbar">
+<button class="brand" id="brand" aria-label="Focus quiz home"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-focus"/></svg></span>focus<span aria-hidden="true">.</span><small>TV & OTT<br>UX LAB</small></button>
+<nav class="nav" aria-label="Resources">
+<button class="text-btn" data-dialog="notes"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Field notes</button>
+<button class="text-btn" data-dialog="help"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg>How it works</button>
+</nav>
+</header>
+<noscript><div class="no-js"><strong>This quiz needs JavaScript.</strong> Enable JavaScript in your browser, then reopen this file. No internet connection is required.</div></noscript>
+<main id="main" tabindex="-1">
+<section id="home-view" aria-label="Set up your quiz">
+<div class="hero">
+<div>
+<div class="eyebrow"><span class="live-dot"></span>THE TV & OTT DESIGN QUIZ</div>
+<h1>Think beyond<br>the <em>touchscreen.</em></h1>
+<p class="hero-copy">One remote. Ten feet away. A different set of design decisions. Put your TV UX instincts to the test, one real-world scenario at a time.</p>
+<div class="hero-tags"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Learn as you go</span><span><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg>Practice at your pace</span></div>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="art-grid"></div><div class="art-orbit"></div>
+<div class="art-label">A DIFFERENT KIND OF FOCUS.</div>
+<div class="tv"><div class="tv-top"><strong>f.</strong><span>DISCOVER&nbsp;&nbsp; FILMS&nbsp;&nbsp; YOUR LIST</span><span>○</span></div><div class="tv-body"><small>FIND YOUR NEXT ESCAPE</small><div class="tv-title">A little further<br>from ordinary.</div><div class="tv-cards"><div class="mini-poster"></div><div class="mini-poster focused"></div><div class="mini-poster"></div><div class="mini-poster"></div></div></div></div>
+<div class="focus-chip"><svg class="icon"><use href="#i-focus"/></svg>Focus changes everything</div>
+<div class="remote"><div class="remote-dot"></div><div class="remote-pad"><div class="remote-center"></div></div><div class="remote-bottom"><div class="remote-key"></div><div class="remote-key"></div><div class="remote-key"></div><div class="remote-key"></div></div><div class="remote-key"></div></div>
+<div class="art-caption"><strong>Designed for the living room.</strong><br>Built around the person holding the remote.</div>
+</div>
+</div>
+<div class="stats-bar" aria-label="Quiz at a glance">
+<div class="stat"><span class="stat-value">40</span><span class="stat-label">Scenario-based<br>questions</span></div>
+<div class="stat"><span class="stat-value">10</span><span class="stat-label">Essential<br>design topics</span></div>
+<div class="stat"><span class="stat-value">0</span><span class="stat-label">Timers or<br>pressure</span></div>
+<div class="stat"><span class="stat-value">∞</span><span class="stat-label">Room to learn<br>and try again</span></div>
+</div>
+<div id="resume-box" class="resume-box" hidden></div>
+<section class="setup" aria-labelledby="setup-title">
+<div class="section-top"><h2 id="setup-title">Make it your session.</h2><p>A quick check-in or the whole picture. You choose.</p></div>
+<div class="mode-grid" id="modes" role="radiogroup" aria-label="Quiz length">
+<button class="mode-card" role="radio" aria-checked="true" data-mode="essentials"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Essentials</h3><p>A little of every topic.</p></div><span class="mode-meta">12 questions<i></i>~8 minutes</span></button>
+<button class="mode-card" role="radio" aria-checked="false" data-mode="deep"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Deep dive</h3><p>The complete knowledge check.</p></div><span class="mode-meta">40 questions<i></i>~25 minutes</span></button>
+<button class="mode-card" role="radio" aria-checked="false" data-mode="practice"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-focus"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Topic practice</h3><p>Give a specific skill some focus.</p></div><span class="mode-meta" id="practice-meta">Choose your topics</span></button>
+</div>
+<div id="topic-picker" class="topic-picker" hidden><p id="picker-label">Pick one or more topics. <strong id="picker-count">4 questions</strong></p><div class="topic-chips" id="topic-chips" role="group" aria-labelledby="picker-label"></div></div>
+<div class="setup-bottom"><div class="feedback-setting"><div class="segmented" role="radiogroup" aria-label="When to show explanations"><button class="segment" role="radio" aria-checked="true" data-feedback="study">Study mode</button><button class="segment" role="radio" aria-checked="false" data-feedback="test">Test mode</button></div><p class="setting-note" id="feedback-note">An explanation after<br>every answer.</p></div><button class="primary" id="start-btn">Start the quiz <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+</section>
+<section class="syllabus" aria-labelledby="syllabus-title">
+<div class="section-top syllabus-head"><h2 id="syllabus-title">The full picture.</h2><span class="eyebrow">10 TOPICS · 4 QUESTIONS EACH</span></div>
+<div class="topic-grid" id="topic-grid"></div>
+</section>
+</section>
+<section id="quiz-view" aria-label="Quiz session" hidden>
+<div class="quiz-intro"><div class="crumb"><span>THE QUIZ</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><strong id="session-label">Essentials</strong></div><button class="text-btn" id="pause-btn"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>Save & leave</button></div>
+<div class="session-layout">
+<aside class="side-panel" aria-label="Topic progress"><p class="eyebrow">YOUR LEARNING PATH</p><div class="topic-track" id="topic-track"></div><div class="side-note"><svg class="icon" style="margin-bottom:12px" aria-hidden="true"><use href="#i-spark"/></svg><strong>There’s a reason for every answer.</strong><p id="side-mode-note"></p></div></aside>
+<div class="quiz-main"><div class="progress-head"><strong id="question-count"></strong><span id="completion-count"></span></div><div class="progress-track" id="quiz-progress" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+<article class="question-card" id="question-card"></article>
+<div class="saved-caption"><span id="save-status"></span><span class="keyboard-hint">Tip: press 1–4 to pick an answer</span></div>
+<div id="mini-map" class="mini-map" aria-label="Question navigation"></div>
+</div>
+</div>
+</section>
+<section id="results-view" class="results" aria-label="Your results" hidden></section>
+</main>
+<footer class="bottom-note"><span>Made for curious designers. Best explored with a little focus.</span><button class="text-btn" data-dialog="privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Private by design · Works offline</button></footer>
+</div>
+<dialog id="dialog" class="dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="close-btn" id="close-dialog" aria-label="Close dialog"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div><div id="dialog-content" class="dialog-content"></div></dialog>
+<div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script>
+'use strict';
+const TOPICS=[{"id": "focus", "name": "Remote & focus", "desc": "Predictable movement, visible states.", "icon": "navigation"}, {"id": "distance", "name": "The 10-foot UI", "desc": "Legibility from across the room.", "icon": "screen"}, {"id": "discovery", "name": "IA & discovery", "desc": "Help viewers find their next watch.", "icon": "grid"}, {"id": "player", "name": "Player experience", "desc": "Playback that stays out of the way.", "icon": "play"}, {"id": "live", "name": "Live TV & EPG", "desc": "Channels, schedules, and live time.", "icon": "live"}, {"id": "platforms", "name": "Platform patterns", "desc": "Adapt to the device in the room.", "icon": "devices"}, {"id": "access", "name": "Accessibility", "desc": "An experience more people can use.", "icon": "access"}, {"id": "analytics", "name": "Analytics & research", "desc": "Measure friction, not just clicks.", "icon": "chart"}, {"id": "performance", "name": "Performance & resilience", "desc": "Keep the experience responsive.", "icon": "bolt"}, {"id": "accounts", "name": "Accounts & trust", "desc": "Sign-in, profiles, and entitlements.", "icon": "person"}];
+const BANK=[
+  {
+    "id": "focus-1",
+    "topic": "focus",
+    "title": "The way back",
+    "prompt": "A viewer opens a film from the seventh card in a horizontal row. After reading its details, they press Back. Where should focus usually return?",
+    "options": [
+      "The first card in the same row",
+      "The same film, with the row position restored",
+      "The primary navigation item for that page",
+      "The first card in the next content row"
+    ],
+    "answer": 1,
+    "explanation": "Restore the originating card and scroll position so the viewer can continue comparing titles. Resetting to the start adds remote presses and forces them to reconstruct their place. If the original item no longer exists, use a predictable nearby fallback.",
+    "takeaway": "Treat focus and scroll position as navigation state."
+  },
+  {
+    "id": "focus-2",
+    "topic": "focus",
+    "title": "A moving target",
+    "prompt": "New recommendations arrive while a viewer is moving through a content row. What is the strongest default?",
+    "options": [
+      "Insert them ahead of the focused card immediately",
+      "Move focus to the highest-ranked new recommendation",
+      "Keep the focused item stable and apply updates without displacing it",
+      "Return focus to the row heading before reordering"
+    ],
+    "answer": 2,
+    "explanation": "Maintain item identity and avoid moving the viewer's target during interaction. Defer disruptive reordering or reconcile the data while preserving focus. A more relevant recommendation is not useful if its arrival breaks control.",
+    "takeaway": "Live data should not take control of navigation."
+  },
+  {
+    "id": "focus-3",
+    "topic": "focus",
+    "title": "Modal boundaries",
+    "prompt": "A subtitle dialog opens over a playing video. How should its focus behave?",
+    "options": [
+      "Move into the dialog, stay within it, then return to its trigger",
+      "Remain on the player while the dialog accepts pointer clicks",
+      "Jump to the first item on the page after dismissal",
+      "Allow Down to move from the dialog into background controls"
+    ],
+    "answer": 0,
+    "explanation": "The active dialog needs a meaningful initial target and a contained navigation scope. Closing it should restore focus to the control that opened it, or a logical fallback. This prevents hidden background actions from firing.",
+    "takeaway": "Opening and closing an overlay should preserve orientation."
+  },
+  {
+    "id": "focus-4",
+    "topic": "focus",
+    "title": "Focus is not selection",
+    "prompt": "A viewer moves focus across film posters. Which behavior best distinguishes focus from activation?",
+    "options": [
+      "Each focused poster immediately opens its detail page",
+      "A highlighted poster is automatically added to the watchlist",
+      "A focused poster starts full playback after every movement",
+      "The poster visibly highlights; Select performs its main action"
+    ],
+    "answer": 3,
+    "explanation": "Focus indicates the current interaction target. Activation is a separate commitment. Lightweight previews may be appropriate when controlled and delayed, but moving through a row should not unexpectedly navigate away or start a full viewing session.",
+    "takeaway": "Make the target obvious before asking for commitment."
+  },
+  {
+    "id": "distance-1",
+    "topic": "distance",
+    "title": "A bigger screen, a smaller view",
+    "prompt": "A mobile catalog is enlarged to fill a 55-inch TV. Test viewers still struggle to scan it from a sofa. What is the best next design move?",
+    "options": [
+      "Keep the density and increase poster resolution",
+      "Rework hierarchy, type, spacing, and density at viewing distance",
+      "Add a permanent magnifying-glass mode to the mobile layout",
+      "Move secondary labels to hover-only tooltips"
+    ],
+    "answer": 1,
+    "explanation": "Screen size alone does not determine readability; viewing distance and visual angle matter. Build a clear hierarchy with fewer competing elements, concise labels, and readable typography. Validate on a real TV from typical seating positions.",
+    "takeaway": "Design for the distance, not just the resolution."
+  },
+  {
+    "id": "distance-2",
+    "topic": "distance",
+    "title": "The edge of the picture",
+    "prompt": "A primary action is clipped on one test TV but looks fine in a desktop emulator. What should the team investigate first?",
+    "options": [
+      "Whether the action needs a longer label",
+      "Whether to hide the action on smaller televisions",
+      "Overscan, safe-area guidance, and the target device's display settings",
+      "Whether to replace every edge-to-edge image"
+    ],
+    "answer": 2,
+    "explanation": "Some display configurations crop the image near its edges. Keep critical text, actions, and focus effects inside appropriate safe regions, while artwork may extend outward. Check platform guidance and actual devices rather than applying one universal margin.",
+    "takeaway": "Protect essential UI from display-edge uncertainty."
+  },
+  {
+    "id": "distance-3",
+    "topic": "distance",
+    "title": "A focus ring with room to breathe",
+    "prompt": "A poster grows on focus and gets cropped by its content row. Which fix addresses the design problem?",
+    "options": [
+      "Reserve space for focused scale, elevation, and outlines",
+      "Remove the visible focus treatment everywhere",
+      "Reduce all poster artwork to low-resolution thumbnails",
+      "Move the selected poster to a different screen"
+    ],
+    "answer": 0,
+    "explanation": "A component's focused state needs layout space as well as a visual treatment. Allow its outline, scale, and shadow to render without collision or clipping. The exact treatment should follow the platform and remain clear from the sofa.",
+    "takeaway": "Design the focused state as part of the layout."
+  },
+  {
+    "id": "distance-4",
+    "topic": "distance",
+    "title": "Readability under real conditions",
+    "prompt": "Which test provides the most useful evidence that a TV interface is legible?",
+    "options": [
+      "Reviewing only a full-resolution screenshot at a desk",
+      "Checking only that text meets a chosen pixel size",
+      "Asking the designer to zoom out in the design tool",
+      "Testing representative TVs from seating distance, with varied lighting"
+    ],
+    "answer": 3,
+    "explanation": "Typography, contrast, compression, display processing, and lighting interact in the living room. Use realistic content and people with varied vision. A fixed font-size rule can support design decisions but cannot replace viewing-distance testing.",
+    "takeaway": "Evaluate readability in the environment where it matters."
+  },
+  {
+    "id": "discovery-1",
+    "topic": "discovery",
+    "title": "Too many rows, too little help",
+    "prompt": "A home page offers 25 recommendation rows, but viewers take a long time to choose. What is the most useful first response?",
+    "options": [
+      "Add more rows so every genre is represented",
+      "Prioritize clear viewing intents and test paths to a meaningful play",
+      "Hide all row labels to reduce visible text",
+      "Rank every row only by poster click-through rate"
+    ],
+    "answer": 1,
+    "explanation": "Organize around recognizable tasks such as continuing a series, finding something short, or browsing a genre. Test whether the structure helps people choose and start suitable content. A larger catalog surface is not automatically better discovery.",
+    "takeaway": "Structure the catalog around viewer intent."
+  },
+  {
+    "id": "discovery-2",
+    "topic": "discovery",
+    "title": "Continue what, exactly?",
+    "prompt": "What information is most useful on a Continue Watching card?",
+    "options": [
+      "Only the series title and an unlabeled progress bar",
+      "The production studio, bitrate, and original release territory",
+      "The specific episode, meaningful progress, and an obvious Resume action",
+      "A generic Play action that always starts the series from episode one"
+    ],
+    "answer": 2,
+    "explanation": "Resume needs to communicate the actual item and likely playback position. Identify the episode where relevant, show understandable progress, and use a clear action. A way to remove unwanted entries also helps viewers control this personal surface.",
+    "takeaway": "Make resuming a specific, predictable promise."
+  },
+  {
+    "id": "discovery-3",
+    "topic": "discovery",
+    "title": "Search with a remote",
+    "prompt": "Remote text entry is slow. Which search design best reduces effort without excluding viewers?",
+    "options": [
+      "Useful suggestions and forgiving matching, with voice as an optional input",
+      "Voice-only search with no on-screen keyboard",
+      "Exact-title matching with results after the complete query",
+      "A full desktop filter panel before any results appear"
+    ],
+    "answer": 0,
+    "explanation": "Reduce typing through query suggestions, recent searches where appropriate, and tolerant matching. Offer voice where supported, while retaining a remote-operable alternative. Results should help people recover from partial queries and mistakes.",
+    "takeaway": "Reduce input effort without making one input method mandatory."
+  },
+  {
+    "id": "discovery-4",
+    "topic": "discovery",
+    "title": "The unavailable title",
+    "prompt": "A subscriber opens a film that requires a separate rental. What should its detail page do?",
+    "options": [
+      "Show Play and reveal the charge only after it is pressed",
+      "Hide the title after the detail page has loaded",
+      "Send the viewer to a generic error page",
+      "Explain availability and price before offering a clear rental action"
+    ],
+    "answer": 3,
+    "explanation": "Distinguish included, rental, purchase, and unavailable states before the viewer commits. Use honest action labels and relevant next steps. Discovery, entitlement, and commerce need to agree about what the viewer can actually watch.",
+    "takeaway": "Set the right expectation before the primary action."
+  },
+  {
+    "id": "player-1",
+    "topic": "player",
+    "title": "Scrub with confidence",
+    "prompt": "A viewer holds Right to find a scene in a long film. What makes seeking easiest to control?",
+    "options": [
+      "Commit a new network seek for every repeated key event",
+      "Show a responsive preview position and useful thumbnails, with clear commit behavior",
+      "Hide the target time until playback restarts",
+      "Use the same large jump for both a tap and a long hold"
+    ],
+    "answer": 1,
+    "explanation": "Give immediate local feedback about the intended position. Thumbnails and time labels help orientation; acceleration can help with longer distances. Match commit and cancel behavior to the platform, and avoid overwhelming playback with redundant seeks.",
+    "takeaway": "Let people predict where seeking will take them."
+  },
+  {
+    "id": "player-2",
+    "topic": "player",
+    "title": "Captions behind the controls",
+    "prompt": "Playback controls obscure two lines of captions. What is the strongest design response?",
+    "options": [
+      "Turn captions off whenever controls are visible",
+      "Permanently move captions to an unreadable edge of the screen",
+      "Coordinate safe regions so controls and captions remain readable",
+      "Require viewers to pause before opening controls"
+    ],
+    "answer": 2,
+    "explanation": "Player overlays, caption placement, and essential image content share the same screen. Coordinate their layout so the viewer can use controls and read captions. Preserve caption settings and test the interaction with realistic multiline text.",
+    "takeaway": "Design captions and controls as one viewing experience."
+  },
+  {
+    "id": "player-3",
+    "topic": "player",
+    "title": "An interruption after pause",
+    "prompt": "A viewer pauses, opens audio settings, and closes the panel. What should normally happen?",
+    "options": [
+      "Preserve the paused state and restore the relevant control",
+      "Resume playback automatically because the settings panel closed",
+      "Restart the current chapter to establish a clean state",
+      "Exit the player and reopen the detail page"
+    ],
+    "answer": 0,
+    "explanation": "Closing a settings panel should not silently override the viewer's explicit pause. Keep playback state and focus coherent across overlays. Intentional playback changes should follow a clear action or an established platform behavior.",
+    "takeaway": "Preserve viewing intent across player overlays."
+  },
+  {
+    "id": "player-4",
+    "topic": "player",
+    "title": "The next episode",
+    "prompt": "An episode ends and the next-episode countdown begins. Which approach best protects viewer control?",
+    "options": [
+      "Make the countdown impossible to interrupt",
+      "Treat every autoplay start as proof of satisfaction",
+      "Hide the next episode's identity until it starts",
+      "Identify what is next, make cancellation easy, and respect autoplay preferences"
+    ],
+    "answer": 3,
+    "explanation": "Autoplay can reduce effort, but the viewer needs to understand and control it. Show the upcoming title, offer a reachable cancel or watch-credits action, and honor preferences. Keep autoplay and deliberate plays distinct in measurement.",
+    "takeaway": "Convenience works best when the viewer stays in control."
+  },
+  {
+    "id": "live-1",
+    "topic": "live",
+    "title": "Two clocks in one guide",
+    "prompt": "What should a useful electronic program guide make clear?",
+    "options": [
+      "Only program popularity across channels",
+      "Channel rows, schedule time, the current-time marker, and available actions",
+      "A grid of equal-width titles without times",
+      "The broadcast date with no indication of what is on now"
+    ],
+    "answer": 1,
+    "explanation": "An EPG maps channels against time. Make the current moment, program duration, and focused program understandable. Distinguish actions such as Watch Live, Start Over, Remind, and Catch Up according to actual rights and availability.",
+    "takeaway": "Orient people in both channel space and time."
+  },
+  {
+    "id": "live-2",
+    "topic": "live",
+    "title": "Back to the live edge",
+    "prompt": "A viewer rewinds a live match by eight minutes. How should the player describe their position?",
+    "options": [
+      "Keep showing LIVE with no indication of the delay",
+      "Label the whole program as on demand",
+      "Show that playback is behind live and provide a clear Go Live action",
+      "Replace the timeline with the scheduled program start time"
+    ],
+    "answer": 2,
+    "explanation": "The broadcast's live status and the viewer's current playback position are different facts. Make the delay understandable and offer a predictable way to return to the live edge when supported. Do not imply time-shift features exist if they do not.",
+    "takeaway": "Separate being on a live channel from watching live now."
+  },
+  {
+    "id": "live-3",
+    "topic": "live",
+    "title": "Same time, different duration",
+    "prompt": "A viewer moves Down from a 90-minute film to a channel with 15-minute programs. How should an EPG usually preserve orientation?",
+    "options": [
+      "Keep a meaningful time anchor and focus the program at that time on the next channel",
+      "Always select the first program of the day on the next channel",
+      "Jump to whichever program has the longest title",
+      "Return to the current-time marker on every vertical move"
+    ],
+    "answer": 0,
+    "explanation": "Vertical movement should preserve a logical time reference, even when program widths differ. Define and test the mapping at boundaries and during schedule updates. A stable time anchor makes channel comparison predictable.",
+    "takeaway": "Preserve the viewer's temporal context when changing rows."
+  },
+  {
+    "id": "live-4",
+    "topic": "live",
+    "title": "Catch-up is not universal",
+    "prompt": "A viewer selects yesterday's program in an EPG. What should determine the action offered?",
+    "options": [
+      "The program's popularity score",
+      "Whether its poster uses the current brand style",
+      "The number of channels in the subscription",
+      "Replay rights, entitlement, availability window, and device capability"
+    ],
+    "answer": 3,
+    "explanation": "A past schedule entry does not guarantee a playable recording. Offer Catch Up only when the program is available to that viewer on that device. Explain unavailable states and present a useful alternative without promising unsupported access.",
+    "takeaway": "Availability must drive the action, not just the schedule."
+  },
+  {
+    "id": "platforms-1",
+    "topic": "platforms",
+    "title": "One product, several platforms",
+    "prompt": "A team is adapting the same streaming service to tvOS, Android TV, and Samsung TV. What should it share and what should it adapt?",
+    "options": [
+      "Share brand and content logic; adapt focus, input, and system behavior to each platform",
+      "Use identical key mappings and Back behavior on every device",
+      "Copy the phone interaction model and change only the artwork",
+      "Rebuild the catalog taxonomy independently on every platform"
+    ],
+    "answer": 0,
+    "explanation": "A coherent service can retain its identity and content model while using the expected interaction conventions of each device. Input capabilities, focus systems, system integration, and review requirements differ. Validate the exact target platforms and models.",
+    "takeaway": "Consistency of purpose can coexist with native interaction."
+  },
+  {
+    "id": "platforms-2",
+    "topic": "platforms",
+    "title": "The tvOS interaction model",
+    "prompt": "Which design choice best fits the standard tvOS browsing model?",
+    "options": [
+      "Require a tiny free-moving pointer for all catalog actions",
+      "Use directional focus with a distinct activation gesture",
+      "Treat every remote movement as a touchscreen swipe over content",
+      "Require a long press to make focus visible"
+    ],
+    "answer": 1,
+    "explanation": "tvOS browsing centers on moving focus among components and then activating the intended one. Use the system's focus behavior and visible states. Account for focus-related scale and effects instead of treating the remote like a desktop mouse.",
+    "takeaway": "Build with the platform's focus model."
+  },
+  {
+    "id": "platforms-3",
+    "topic": "platforms",
+    "title": "Android TV and Back",
+    "prompt": "In a standard Android TV app flow, repeated Back presses should generally do what?",
+    "options": [
+      "Cycle forever between the navigation menu and home content",
+      "Always open an exit-confirmation dialog before leaving",
+      "Navigate predictably toward the app root and then leave the app",
+      "Return to the first poster while preventing app exit"
+    ],
+    "answer": 2,
+    "explanation": "Android TV guidance calls for predictable backward navigation without exit gating or infinite loops. Test the whole stack, including overlays and deep links. Special system entry points can have additional return requirements, so verify those separately.",
+    "takeaway": "Respect platform-specific Back behavior."
+  },
+  {
+    "id": "platforms-4",
+    "topic": "platforms",
+    "title": "The missing button",
+    "prompt": "Your Samsung TV design assigns a required action only to a colored remote button. What is the best fix?",
+    "options": [
+      "Require viewers to buy a larger remote",
+      "Hide the action on models without that button",
+      "Replace the action with a voice-only command",
+      "Make it reachable through basic directional and Select controls"
+    ],
+    "answer": 3,
+    "explanation": "Samsung's basic remote controls must provide access to the app's features. Extra hardware buttons can be useful shortcuts, but their presence varies. Keep core tasks available with the supported basic controls and test actual target remotes.",
+    "takeaway": "Hardware shortcuts should not become hardware requirements."
+  },
+  {
+    "id": "access-1",
+    "topic": "access",
+    "title": "A focus state everyone can find",
+    "prompt": "A focused card differs only by a subtle red-to-green tint. What would improve accessibility?",
+    "options": [
+      "Add a clear outline or shape/elevation cue with sufficient contrast",
+      "Use a faster color animation to attract attention",
+      "Remove focus from poster artwork",
+      "Show focus only after the viewer presses Select"
+    ],
+    "answer": 0,
+    "explanation": "Color alone is a fragile way to communicate state. A clear non-color cue, adequate contrast, and a visible focus indicator help people with varied vision. Labels and accessibility semantics should communicate state to assistive technology as well.",
+    "takeaway": "Use more than color to communicate interaction state."
+  },
+  {
+    "id": "access-2",
+    "topic": "access",
+    "title": "More than dialogue",
+    "prompt": "What should high-quality captions communicate?",
+    "options": [
+      "Only a summary of each scene",
+      "Dialogue plus relevant speaker identification and meaningful non-speech audio",
+      "Only music lyrics, leaving dialogue to lip-reading",
+      "All spoken words without regard to timing or readability"
+    ],
+    "answer": 1,
+    "explanation": "Captions make meaningful audio information available visually, including dialogue, relevant speaker cues, and sound information. Keep them synchronized and readable. Audio description serves a different purpose by conveying important visual information through audio.",
+    "takeaway": "Captions and audio description solve different access needs."
+  },
+  {
+    "id": "access-3",
+    "topic": "access",
+    "title": "The unnamed control",
+    "prompt": "A screen reader announces four player controls as 'button, button, button, button.' What is the priority fix?",
+    "options": [
+      "Increase the icons' resolution",
+      "Add explanatory text only to the help page",
+      "Provide accurate accessible names, roles, states, and a logical focus order",
+      "Play an identical confirmation sound on all controls"
+    ],
+    "answer": 2,
+    "explanation": "Assistive technology needs meaningful semantics: what each control does and its current state. A play/pause control's label should match the action it will perform. Verify with the actual screen reader on the target platform.",
+    "takeaway": "An icon is not an accessible name."
+  },
+  {
+    "id": "access-4",
+    "topic": "access",
+    "title": "Motion without a requirement",
+    "prompt": "An animated interface makes a viewer uncomfortable. Which response best supports access?",
+    "options": [
+      "Disable the remote while transitions are playing",
+      "Ask the viewer to reduce the TV's brightness",
+      "Keep the animation because it is part of the brand",
+      "Respect reduced-motion preferences where available and offer calmer transitions"
+    ],
+    "answer": 3,
+    "explanation": "Motion should clarify changes without becoming a barrier. Reduce nonessential movement while keeping state changes understandable. Use platform accessibility settings when available, and test that the calmer experience retains focus visibility and feedback.",
+    "takeaway": "Communicate change without requiring motion."
+  },
+  {
+    "id": "analytics-1",
+    "topic": "analytics",
+    "title": "Clicks are up. Is discovery better?",
+    "prompt": "A redesign raises poster click-through but also increases rapid exits after playback begins. What is the strongest evaluation?",
+    "options": [
+      "Examine meaningful play starts, early abandonment, and discovery effort together",
+      "Declare success because more posters are clicked",
+      "Ignore abandonment because it happens after discovery",
+      "Measure only total catalog page views"
+    ],
+    "answer": 0,
+    "explanation": "A click can reflect interest, confusion, or misleading presentation. Evaluate downstream viewing quality alongside effort to find content. Define meaningful play explicitly, segment by context, and use research to understand whether viewers found what they intended.",
+    "takeaway": "Optimize the viewing outcome, not an isolated click."
+  },
+  {
+    "id": "analytics-2",
+    "topic": "analytics",
+    "title": "A precise startup metric",
+    "prompt": "For a defined play attempt, how should time to first frame usually be measured?",
+    "options": [
+      "From app installation to the first episode completion",
+      "From the intentional play request to the first rendered video frame",
+      "From page load to the first poster appearing",
+      "From subtitle selection to the first audio-language change"
+    ],
+    "answer": 1,
+    "explanation": "Use clearly specified start and end events. Separate app launch, navigation, authorization, and playback startup, and distinguish cold starts and resumed sessions. Pair startup latency with failure rate so failed attempts do not disappear from the picture.",
+    "takeaway": "Good metrics begin with unambiguous event boundaries."
+  },
+  {
+    "id": "analytics-3",
+    "topic": "analytics",
+    "title": "What a remote tap cannot tell you",
+    "prompt": "Which research approach best reveals focus-navigation problems?",
+    "options": [
+      "Ask participants which screenshot looks more premium",
+      "Inspect a mouse-only desktop prototype",
+      "Observe representative tasks with real remotes, tracking errors and recovery",
+      "Count all D-pad presses without knowing the task"
+    ],
+    "answer": 2,
+    "explanation": "Watch people attempt realistic tasks on representative devices. Record lost focus, wrong turns, backtracking, and recovery alongside completion and time. Remote-press counts gain meaning when connected to a task and the viewer's intent.",
+    "takeaway": "Observe navigation in use, including how people recover."
+  },
+  {
+    "id": "analytics-4",
+    "topic": "analytics",
+    "title": "An experiment with guardrails",
+    "prompt": "A new home-page layout reduces time to first play. Before rolling it out, what else should the team check?",
+    "options": [
+      "Whether it creates more analytics events",
+      "Whether every viewer clicked the hero banner",
+      "Whether it increases app-open counts in aggregate",
+      "Playback success, abandonment, accessibility, and results across device/user groups"
+    ],
+    "answer": 3,
+    "explanation": "A faster start may result from better discovery or from aggressive autoplay. Define deliberate and automatic starts separately, inspect quality and access guardrails, and segment results. Interpret the experiment with an appropriate baseline and research context.",
+    "takeaway": "A winning metric needs guardrails and a clear definition."
+  },
+  {
+    "id": "performance-1",
+    "topic": "performance",
+    "title": "A slow network, a working remote",
+    "prompt": "Catalog images load slowly on a weak connection. What should the UI prioritize?",
+    "options": [
+      "Keep navigation responsive, preserve focus, and reserve stable content space",
+      "Block all remote input until every poster loads",
+      "Continuously reorder the grid as each image arrives",
+      "Move focus to a loading spinner after every failed request"
+    ],
+    "answer": 0,
+    "explanation": "Loading should not remove control. Stable placeholders reduce layout shifts; meaningful loading and retry states explain what is happening. Keep the navigation model coherent even when artwork or individual content requests are delayed.",
+    "takeaway": "Separate interaction responsiveness from content loading."
+  },
+  {
+    "id": "performance-2",
+    "topic": "performance",
+    "title": "Interrupted halfway through",
+    "prompt": "A network outage interrupts a film. Which recovery experience is strongest?",
+    "options": [
+      "Show an error code with no further action",
+      "Explain the problem, offer retry, and preserve playback position where feasible",
+      "Restart from the beginning as soon as any connection returns",
+      "Open a purchase screen because playback failed"
+    ],
+    "answer": 1,
+    "explanation": "Make recovery understandable and keep the viewer's context. Preserve position and preferences where feasible, avoid endless retry loops, and explain next steps. Do not infer an entitlement problem from a generic network failure.",
+    "takeaway": "Recovery should protect the viewer's time and context."
+  },
+  {
+    "id": "performance-3",
+    "topic": "performance",
+    "title": "Fast in the emulator",
+    "prompt": "An app performs well on a development machine but poorly on older TVs. What is the best next step?",
+    "options": [
+      "Require a firmware reset before every session",
+      "Remove every loading state to make the app look faster",
+      "Profile representative lower-powered devices and optimize measured bottlenecks",
+      "Raise animation duration so lag feels intentional"
+    ],
+    "answer": 2,
+    "explanation": "Real TVs expose CPU, memory, graphics, and input-latency limits that a desktop may hide. Profile actual bottlenecks, manage image and video resources, and test long sessions. Preserve focus identity when virtualizing content lists.",
+    "takeaway": "Performance is a device-level part of UX."
+  },
+  {
+    "id": "performance-4",
+    "topic": "performance",
+    "title": "A change in stream quality",
+    "prompt": "Available bandwidth drops while a film is playing. What is the most reasonable playback strategy?",
+    "options": [
+      "Always stop and ask the viewer to choose a bitrate",
+      "Keep requesting the highest quality regardless of stalls",
+      "Restart the film whenever video quality changes",
+      "Use adaptive playback to balance continuity and quality, with clear recovery on failure"
+    ],
+    "answer": 3,
+    "explanation": "Adaptive bitrate playback can adjust quality as conditions change, helping reduce stalls. It is not a guarantee of uninterrupted playback. Measure rebuffering, startup, errors, and picture quality together rather than maximizing resolution alone.",
+    "takeaway": "Playback quality includes continuity as well as sharpness."
+  },
+  {
+    "id": "accounts-1",
+    "topic": "accounts",
+    "title": "Sign in from the sofa",
+    "prompt": "A service requires account sign-in on a TV. Which approach best balances low effort and access?",
+    "options": [
+      "Offer a secure device-link flow plus a usable remote-entry alternative",
+      "Require every password to be entered with the D-pad",
+      "Require a camera-equipped smartphone for all viewers",
+      "Display a permanent shared access code for the household"
+    ],
+    "answer": 0,
+    "explanation": "A short-lived device code or QR-assisted flow can move complex entry to another device. Explain the steps and success state, handle expiry, and retain an accessible alternative. Never assume every viewer has a suitable phone nearby.",
+    "takeaway": "Reduce sign-in friction without removing alternative access."
+  },
+  {
+    "id": "accounts-2",
+    "topic": "accounts",
+    "title": "One TV, several viewers",
+    "prompt": "Why should Continue Watching and recommendations usually be profile-aware?",
+    "options": [
+      "Every person in a household has the same viewing intent",
+      "Watch history, preferences, and age-related access can differ by viewer",
+      "It lets the app remove account-level settings",
+      "It prevents the need to support switching profiles"
+    ],
+    "answer": 1,
+    "explanation": "A shared device is not a single user. Keep personal viewing state and relevant restrictions coherent for the active profile. Make profile identity visible and switching understandable so one person's history does not silently become another's.",
+    "takeaway": "Model the household without flattening its people."
+  },
+  {
+    "id": "accounts-3",
+    "topic": "accounts",
+    "title": "A blocked title in a child profile",
+    "prompt": "A child profile encounters age-restricted content. What is the strongest behavior?",
+    "options": [
+      "Allow playback if the title came from search",
+      "Hide the restriction once the viewer opens details",
+      "Apply restrictions consistently and provide an appropriate protected adult flow",
+      "Treat dismissing an error message as parental approval"
+    ],
+    "answer": 2,
+    "explanation": "Restrictions need to hold across browsing, search, deep links, and playback authorization. An adult action should require an appropriate protection mechanism rather than a cosmetic prompt. Explain the state without exposing an easy bypass.",
+    "takeaway": "Restrictions must survive every route to playback."
+  },
+  {
+    "id": "accounts-4",
+    "topic": "accounts",
+    "title": "The analytics consent screen",
+    "prompt": "Which analytics approach best supports viewer trust?",
+    "options": [
+      "Collect raw passwords to diagnose sign-in failures",
+      "Retain all household viewing events forever by default",
+      "Treat shared-TV use as automatic consent from every viewer",
+      "Minimize data, explain purposes, and respect applicable consent and privacy controls"
+    ],
+    "answer": 3,
+    "explanation": "Collect data tied to a defined purpose, avoid sensitive secrets, and honor relevant privacy choices. Shared-device and child-profile contexts deserve deliberate treatment. Keep diagnostics useful through appropriate minimization and access controls.",
+    "takeaway": "Useful measurement does not require collecting everything."
+  }
+];
+const $=function(selector,root){return (root||document).querySelector(selector);};
+const $$=function(selector,root){return Array.from((root||document).querySelectorAll(selector));};
+const icon=function(name){return '<svg class="icon" aria-hidden="true"><use href="#i-'+name+'"/></svg>';};
+const escapeHtml=function(value){return String(value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+const qById=Object.fromEntries(BANK.map(function(q){return [q.id,q];}));
+const tById=Object.fromEntries(TOPICS.map(function(t){return [t.id,t];}));
+const STORAGE_KEY='focus-tv-quiz-v1';
+const LABELS={essentials:'Essentials',deep:'Deep dive',practice:'Topic practice',retry:'Missed questions'};
+let config={mode:'essentials',feedback:'study',topics:['focus']};
+let state=null;
+let stored=null;
+let best=0;
+let storageAvailable=true;
+let toastTimer;
+let dialogTrigger=null;
+let reviewFilter='all';
+function shuffled(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function isValidSession(s){
+ if(!s||s.version!==1||!Array.isArray(s.ids)||!s.ids.length||s.ids.length>40||new Set(s.ids).size!==s.ids.length)return false;
+ if(!s.ids.every(function(id){return !!qById[id];})||!Number.isInteger(s.pos)||s.pos<0||s.pos>=s.ids.length)return false;
+ if(!['study','test'].includes(s.feedback)||!Object.hasOwn(LABELS,s.mode)||!s.orders||!s.answers||!s.selections)return false;
+ return s.ids.every(function(id){const order=s.orders[id];return Array.isArray(order)&&order.length===4&&new Set(order).size===4&&order.every(function(x){return Number.isInteger(x)&&x>=0&&x<=3;})&&[s.answers[id],s.selections[id]].every(function(x){return x===undefined||(Number.isInteger(x)&&x>=0&&x<=3);});});
+}
+function loadStorage(){
+ try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const data=JSON.parse(raw);best=Number.isFinite(data.best)?Math.min(100,Math.max(0,data.best)):0;if(isValidSession(data.session))stored=data.session;}}
+ catch(e){storageAvailable=false;}
+}
+function save(){
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify({best:best,session:state||stored}));storageAvailable=true;}
+ catch(e){storageAvailable=false;}
+ updateStorageStatus();
+}
+function updateStorageStatus(){const el=$('#save-status');if(el)el.innerHTML=icon(storageAvailable?'save':'help')+' '+(storageAvailable?'Progress saved in this browser':'Progress is available for this tab only');}
+function announce(text){$('#announcer').textContent=text;}
+function toast(text){clearTimeout(toastTimer);$('#toast').textContent=text;$('#toast').hidden=false;toastTimer=setTimeout(function(){$('#toast').hidden=true;},4500);}
+function setView(name){['home','quiz','results'].forEach(function(v){$('#'+v+'-view').hidden=v!==name;});document.title=name==='quiz'?'Quiz in progress — Focus':name==='results'?'Your results — Focus':'Focus — The TV & OTT UX Quiz';}
+function scrollTop(){window.scrollTo({top:0,behavior:'instant'});}
+function init(){
+ loadStorage();
+ $('#topic-grid').innerHTML=TOPICS.map(function(t,i){return '<button class="topic-tile" data-practice="'+t.id+'" aria-label="Practice '+t.name+'"><div class="topic-num"><span>'+String(i+1).padStart(2,'0')+'</span>'+icon(t.icon)+'</div><h3>'+t.name+'</h3><p>'+t.desc+'</p></button>';}).join('');
+ $('#topic-chips').innerHTML=TOPICS.map(function(t){return '<button class="topic-chip" data-topic="'+t.id+'" aria-pressed="'+config.topics.includes(t.id)+'">'+t.name+'</button>';}).join('');
+ updateConfig();renderResume();
+ document.addEventListener('click',handleClick);
+ document.addEventListener('keydown',handleKeys);
+ $('#close-dialog').addEventListener('click',closeDialog);
+ $('#dialog').addEventListener('click',function(e){if(e.target===this){const r=this.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog();}});
+ $('#dialog').addEventListener('close',function(){if(dialogTrigger&&dialogTrigger.isConnected)dialogTrigger.focus();});
+ $('#dialog').addEventListener('cancel',function(){});
+ window.addEventListener('pagehide',function(){if(state)save();});
+}
+function renderResume(){
+ const box=$('#resume-box');
+ if(!stored){box.hidden=true;return;}
+ box.hidden=false;const count=Object.keys(stored.answers).length;const completed=stored.finished&&count===stored.ids.length;
+ box.innerHTML='<div><strong>'+ (completed?'Your last session is ready to review.':'Pick up where you left off.')+'</strong><p>'+LABELS[stored.mode]+' · '+count+' of '+stored.ids.length+' answered · '+(stored.feedback==='study'?'Study':'Test')+' mode</p></div><div class="resume-actions"><button class="text-btn" id="discard-btn">Discard</button><button class="primary" id="resume-btn">'+(completed?'View results':'Resume session')+' '+icon('arrow')+'</button></div>';
+}
+function updateConfig(){
+ $$('[data-mode]').forEach(function(b){const selected=b.dataset.mode===config.mode;b.setAttribute('aria-checked',String(selected));b.tabIndex=selected?0:-1;});
+ $$('[data-feedback]').forEach(function(b){const selected=b.dataset.feedback===config.feedback;b.setAttribute('aria-checked',String(selected));b.tabIndex=selected?0:-1;});
+ $('#topic-picker').hidden=config.mode!=='practice';
+ $('#feedback-note').innerHTML=config.feedback==='study'?'An explanation after<br>every answer.':'All explanations in<br>your final review.';
+ $$('[data-topic]').forEach(function(b){b.setAttribute('aria-pressed',String(config.topics.includes(b.dataset.topic)));});
+ const count=config.topics.length*4;
+ $('#picker-count').textContent=count+' questions';
+ $('#practice-meta').textContent=config.mode==='practice'?count+' questions · '+config.topics.length+' topic'+(config.topics.length===1?'':'s'):'Choose your topics';
+ $('#start-btn').disabled=config.mode==='practice'&&count===0;
+}
+function handleClick(event){
+ const b=event.target.closest('button');if(!b||b.disabled)return;
+ if(b.dataset.dialog){openResource(b.dataset.dialog);return;}
+ if(b.dataset.mode){config.mode=b.dataset.mode;updateConfig();return;}
+ if(b.dataset.feedback){config.feedback=b.dataset.feedback;updateConfig();return;}
+ if(b.dataset.topic){const id=b.dataset.topic;config.topics=config.topics.includes(id)?config.topics.filter(function(t){return t!==id;}):config.topics.concat(id);updateConfig();return;}
+ if(b.dataset.practice){config.mode='practice';config.topics=[b.dataset.practice];updateConfig();$('#setup-title').scrollIntoView({behavior:'smooth',block:'start'});$('#modes [data-mode=practice]').focus({preventScroll:true});announce('Topic practice selected: '+tById[b.dataset.practice].name);return;}
+ if(b.dataset.choice!==undefined){selectAnswer(Number(b.dataset.choice));return;}
+ if(b.dataset.goto!==undefined){const n=Number(b.dataset.goto);if(state&&(state.answers[state.ids[n]]!==undefined||n<=firstUnanswered())){state.pos=n;save();closeDialog();renderQuestion(true);}return;}
+ if(b.dataset.filter){reviewFilter=b.dataset.filter;renderReview();return;}
+ switch(b.id){
+ case 'brand':if(!$('#home-view').hidden){scrollTop();return;}goHome();break;
+ case 'start-btn':if(stored){openReplace();}else startSession();break;
+ case 'confirm-start':closeDialog();startSession();break;
+ case 'resume-btn':state=stored;if(state.finished&&answeredCount()===state.ids.length){renderResults(true);}else{setView('quiz');renderQuestion(true);scrollTop();}break;
+ case 'discard-btn':openDiscard();break;
+ case 'confirm-discard':state=null;stored=null;try{localStorage.setItem(STORAGE_KEY,JSON.stringify({best:best,session:null}));}catch(e){}closeDialog();renderResume();toast('Saved session discarded.');break;
+ case 'pause-btn':goHome();toast(storageAvailable?'Session saved. Come back whenever you like.':'Keep this tab open to retain your session.');break;
+ case 'check-btn':checkAnswer();break;
+ case 'next-btn':nextQuestion();break;
+ case 'prev-btn':if(state.pos>0){state.pos--;save();renderQuestion(true);}break;
+ case 'retry-btn':startSession(state.ids.filter(function(id){return state.answers[id]!==qById[id].answer;}),'retry');break;
+ case 'retake-btn':startSession(state.ids.slice(),state.mode);break;
+ case 'new-session-btn':goHome();$('#setup-title').scrollIntoView({behavior:'smooth'});break;
+ case 'export-btn':downloadResults();break;
+ case 'keep-btn':closeDialog();break;
+ }
+}
+function startSession(customIds,customMode){
+ let ids;
+ if(customIds)ids=customIds.slice();
+ else if(config.mode==='essentials'){
+  ids=TOPICS.map(function(t){return shuffled(BANK.filter(function(q){return q.topic===t.id;}))[0].id;});
+  ids=ids.concat(shuffled(BANK.filter(function(q){return !ids.includes(q.id);})).slice(0,2).map(function(q){return q.id;}));
+ }else ids=BANK.filter(function(q){return config.mode==='deep'||config.topics.includes(q.topic);}).map(function(q){return q.id;});
+ if(!ids.length)return;
+ const feedback=customIds&&state?state.feedback:config.feedback;
+ state={version:1,mode:customMode||config.mode,feedback:feedback,ids:shuffled(ids),pos:0,orders:{},answers:{},selections:{},startedAt:new Date().toISOString(),finished:false};
+ state.ids.forEach(function(id){state.orders[id]=shuffled([0,1,2,3]);});
+ stored=state;save();setView('quiz');renderQuestion(true);scrollTop();
+}
+function answeredCount(){return state.ids.filter(function(id){return state.answers[id]!==undefined;}).length;}
+function firstUnanswered(){const n=state.ids.findIndex(function(id){return state.answers[id]===undefined;});return n===-1?state.ids.length-1:n;}
+function goHome(){
+ if(state){stored=state;save();}
+ setView('home');renderResume();scrollTop();$('#setup-title').setAttribute('tabindex','-1');$('#setup-title').focus({preventScroll:true});
+}
+function renderQuestion(moveFocus){
+ setView('quiz');
+ const id=state.ids[state.pos],q=qById[id],t=tById[q.topic],answered=state.answers[id]!==undefined,count=answeredCount(),total=state.ids.length;
+ $('#session-label').textContent=LABELS[state.mode]+' · '+(state.feedback==='study'?'Study mode':'Test mode');
+ $('#question-count').textContent='Question '+(state.pos+1)+' of '+total;
+ $('#completion-count').textContent=count+' answered · '+Math.round(count/total*100)+'%';
+ $('#quiz-progress').setAttribute('aria-valuemax',String(total));$('#quiz-progress').setAttribute('aria-valuenow',String(count));
+ $('#progress-fill').style.width=(count/total*100)+'%';
+ $('#side-mode-note').textContent=state.feedback==='study'?'Take a moment with each explanation. The thinking matters more than the score.':'Make your best call. Your full answer review will be waiting at the end.';
+ $('#topic-track').innerHTML=TOPICS.filter(function(topic){return state.ids.some(function(qid){return qById[qid].topic===topic.id;});}).map(function(topic){
+  const topicIds=state.ids.filter(function(qid){return qById[qid].topic===topic.id;}),done=topicIds.filter(function(qid){return state.answers[qid]!==undefined;}).length;
+  return '<div class="track-row '+(topic.id===q.topic?'active':done===topicIds.length?'done':'')+'" '+(topic.id===q.topic?'aria-current="true"':'')+'>'+icon(done===topicIds.length?'check':topic.icon)+'<span>'+topic.name+'</span><small>'+done+'/'+topicIds.length+'</small></div>';
+ }).join('');
+ let html='<div class="question-meta"><span class="pill">'+icon(t.icon)+t.name+'</span><span class="question-kicker">'+escapeHtml(q.title)+'</span></div><h1 class="question-title" tabindex="-1" id="question-title">'+escapeHtml(q.prompt)+'</h1><p class="question-hint" id="answer-hint">'+(answered?'Answer locked for this attempt.':'Choose the best answer. One answer is correct.')+'</p><div class="answers" role="radiogroup" aria-labelledby="question-title" aria-describedby="answer-hint">';
+ state.orders[id].forEach(function(original,i){
+  const selected=state.selections[id]===original,revealed=answered&&state.feedback==='study';let status='',cls='';
+  if(revealed){if(original===q.answer){cls='correct';status=icon('check')+'<span>Correct answer</span>';}else if(original===state.answers[id]){cls='wrong';status=icon('close')+'<span>Your answer</span>';}}
+  html+='<button class="answer '+cls+'" role="radio" aria-checked="'+selected+'" aria-disabled="'+answered+'" data-choice="'+original+'" tabindex="'+(!answered&&(selected||(state.selections[id]===undefined&&i===0))?'0':'-1')+'"><span class="answer-letter" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><span class="answer-label">'+escapeHtml(q.options[original])+'</span>'+(status?'<span class="answer-state">'+status+'</span>':'')+'</button>';
+ });
+ html+='</div>';
+ if(answered){
+  if(state.feedback==='study'){const correct=state.answers[id]===q.answer;html+='<div class="feedback '+(correct?'':'wrong-feedback')+'" id="feedback" tabindex="-1" aria-label="Answer explanation"><h3>'+icon(correct?'check':'book')+(correct?'That’s the right call.':'A useful one to learn from.')+'</h3><p>'+escapeHtml(q.explanation)+'</p><div class="takeaway">'+escapeHtml(q.takeaway)+'</div></div>';}
+  else html+='<div class="feedback" id="feedback" tabindex="-1"><h3>'+icon('save')+'Answer saved.</h3><p>You’ll see the correct answer and explanation in your final review.</p></div>';
+ }
+ const last=state.pos===total-1;
+ html+='<div class="question-footer"><button class="secondary" id="prev-btn" '+(state.pos===0?'disabled':'')+'>'+icon('back')+'Previous</button>'+(answered?'<button class="primary" id="next-btn">'+(last?'See my results':'Next question')+icon('arrow')+'</button>':'<button class="primary" id="check-btn" '+(state.selections[id]===undefined?'disabled':'')+'>'+(state.feedback==='study'?'Check answer':'Submit answer')+icon('arrow')+'</button>')+'</div>';
+ $('#question-card').innerHTML=html;
+ renderMap();updateStorageStatus();
+ if(moveFocus){$('#question-title').focus({preventScroll:true});$('#quiz-view').scrollIntoView({behavior:'instant',block:'start'});}
+}
+function renderMap(){
+ const max=firstUnanswered();
+ $('#mini-map').innerHTML=state.ids.map(function(id,i){const answered=state.answers[id]!==undefined,reviewed=answered&&state.feedback==='study',correct=state.answers[id]===qById[id].answer;
+ return '<button class="map-dot '+(reviewed?(correct?'is-right':'is-wrong'):answered?'answered':'')+'" data-goto="'+i+'" '+(i===state.pos?'aria-current="step"':'')+' aria-label="Question '+(i+1)+(answered?(reviewed?(correct?', correct':', incorrect'):', answered'):', not answered')+'" '+(!answered&&i>max?'disabled':'')+'>'+(i+1)+'</button>';}).join('');
+}
+function selectAnswer(original){
+ const id=state.ids[state.pos];if(state.answers[id]!==undefined)return;
+ state.selections[id]=original;
+ $$('[data-choice]').forEach(function(b){const selected=Number(b.dataset.choice)===original;b.setAttribute('aria-checked',String(selected));b.tabIndex=selected?0:-1;});
+ $('#check-btn').disabled=false;save();
+}
+function checkAnswer(){
+ const id=state.ids[state.pos];if(state.selections[id]===undefined||state.answers[id]!==undefined)return;
+ state.answers[id]=state.selections[id];save();renderQuestion(false);
+ $('#feedback').focus({preventScroll:true});$('#feedback').scrollIntoView({behavior:'smooth',block:'nearest'});
+ announce(state.feedback==='test'?'Answer saved.':state.answers[id]===qById[id].answer?'Correct answer.':'Answer checked. Read the explanation.');
+}
+function nextQuestion(){
+ if(state.pos<state.ids.length-1){state.pos++;save();renderQuestion(true);}
+ else if(answeredCount()===state.ids.length){state.finished=true;state.finishedAt=new Date().toISOString();stored=state;renderResults(true);}
+ else{state.pos=firstUnanswered();save();renderQuestion(true);}
+}
+function getScore(){const correct=state.ids.filter(function(id){return state.answers[id]===qById[id].answer;}).length;return {correct:correct,total:state.ids.length,pct:Math.round(correct/state.ids.length*100),missed:state.ids.length-correct};}
+function renderResults(moveFocus){
+ setView('results');const s=getScore(),topicCount=new Set(state.ids.map(function(id){return qById[id].topic;})).size;best=Math.max(best,s.pct);save();reviewFilter='all';
+ const headline=s.pct>=90?'Your TV UX instincts are sharp.':s.pct>=75?'Strong foundations. Keep going.':s.pct>=50?'Good thinking. More to explore.':'Every good instinct starts somewhere.';
+ const desc=s.pct>=90?'You’re connecting the details to the bigger viewing experience. Review your answers, then try a new set to keep that knowledge fresh.':s.missed?'Your answers point to a few useful areas to revisit. Explore the explanations below, then give the missed questions another try.':'You made the right call on every scenario in this session. Try a longer quiz to explore more of the question bank.';
+ $('#results-view').innerHTML='<div class="result-hero"><div class="score-ring" style="--score:'+s.pct+'%"><div class="score-content"><div class="score-number">'+s.pct+'<span style="font-size:21px">%</span></div><div class="score-caption">'+s.correct+' of '+s.total+' correct</div></div></div><div class="result-copy"><div class="eyebrow">'+icon('check')+'SESSION COMPLETE</div><h1 id="result-title" tabindex="-1">'+headline+'</h1><p>'+desc+'</p><div class="result-counts"><span><strong>'+s.correct+'</strong>correct</span><span><strong>'+s.missed+'</strong>to revisit</span><span><strong>'+topicCount+'</strong>topic'+(topicCount===1?'':'s')+' explored</span></div></div></div>'+
+ '<div class="results-actions">'+(s.missed?'<button class="primary" id="retry-btn">Practice missed questions '+icon('arrow')+'</button>':'')+'<button class="secondary" id="retake-btn">'+icon('repeat')+'Retake this set</button><button class="secondary" id="new-session-btn">'+icon('grid')+'New session</button><button class="secondary" id="export-btn">'+icon('download')+'Save results</button></div>'+
+ '<section class="breakdown" aria-labelledby="breakdown-title"><h2 id="breakdown-title">Where you’re at.</h2><div class="breakdown-grid">'+TOPICS.filter(function(t){return state.ids.some(function(id){return qById[id].topic===t.id;});}).map(function(t){
+ const ids=state.ids.filter(function(id){return qById[id].topic===t.id;}),correct=ids.filter(function(id){return state.answers[id]===qById[id].answer;}).length;
+ return '<div class="breakdown-item"><div class="breakdown-label"><span>'+t.name+'</span><strong>'+correct+' / '+ids.length+'</strong></div><div class="breakdown-bar" aria-hidden="true"><span style="width:'+correct/ids.length*100+'%"></span></div></div>';
+ }).join('')+'</div></section>'+
+ '<section aria-labelledby="review-title"><div class="review-header"><h2 id="review-title">Take the learning with you.</h2><div class="review-tabs" role="group" aria-label="Filter answer review"><button class="review-tab" data-filter="all" aria-pressed="true">All answers ('+s.total+')</button><button class="review-tab" data-filter="missed" aria-pressed="false">Missed ('+s.missed+')</button></div></div><div class="review-list" id="review-list"></div></section><div class="note-box">This is a learning exercise, not a certification. Scores reflect this question set. Device behavior, platform guidance, and research context still matter.</div>';
+ renderReview();
+ if(moveFocus){scrollTop();$('#result-title').focus({preventScroll:true});announce('Session complete. '+s.correct+' of '+s.total+' correct, '+s.pct+' percent.');}
+}
+function renderReview(){
+ $$('[data-filter]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.filter===reviewFilter));});
+ const ids=state.ids.filter(function(id){return reviewFilter==='all'||state.answers[id]!==qById[id].answer;});
+ $('#review-list').innerHTML=ids.length?ids.map(function(id){
+ const q=qById[id],selected=state.answers[id],correct=selected===q.answer;
+ return '<details class="review-item"><summary><span class="review-symbol '+(correct?'':'missed')+'">'+icon(correct?'check':'close')+'</span><span class="review-summary"><small>QUESTION '+(state.ids.indexOf(id)+1)+' · '+tById[q.topic].name+' · '+(correct?'Correct':'Incorrect')+'</small>'+escapeHtml(q.prompt)+'</span>'+icon('chevron').replace('class="icon"','class="icon review-chevron"')+'</summary><div class="review-body"><div class="review-answer '+(correct?'':'missed')+'"><strong>Your answer</strong>'+escapeHtml(q.options[selected])+'</div>'+(!correct?'<div class="review-answer"><strong>Correct answer</strong>'+escapeHtml(q.options[q.answer])+'</div>':'')+'<p>'+escapeHtml(q.explanation)+'</p><div class="takeaway">'+escapeHtml(q.takeaway)+'</div></div></details>';
+ }).join(''):'<div class="empty-review">'+icon('check')+' Nothing to revisit in this session. Nicely done. Try the full quiz for more scenarios.</div>';
+}
+function downloadResults(){
+ const s=getScore();let lines=['FOCUS — TV & OTT UX Quiz','Completed: '+new Date(state.finishedAt||Date.now()).toLocaleString('en-GB'),'Session: '+LABELS[state.mode]+' / '+state.feedback+' mode','Score: '+s.correct+' / '+s.total+' ('+s.pct+'%)','','ANSWER REVIEW',''];
+ state.ids.forEach(function(id,i){const q=qById[id],answer=state.answers[id];lines.push((i+1)+'. '+q.prompt,'Topic: '+tById[q.topic].name,'Your answer: '+q.options[answer],answer===q.answer?'Result: Correct':'Result: Incorrect','Correct answer: '+q.options[q.answer],'Why: '+q.explanation,'Remember: '+q.takeaway,'');});
+ lines.push('Learning exercise, not a certification.','Reference material: see Field notes in the quiz.');
+ const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='focus-quiz-results-'+new Date().toISOString().slice(0,10)+'.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);toast('Your results file is ready.');
+}
+function openDialog(title,content){
+ dialogTrigger=document.activeElement;$('#dialog-title').textContent=title;$('#dialog-content').innerHTML=content;$('#dialog').showModal();$('#dialog-content').scrollTop=0;$('#close-dialog').focus();
+}
+function closeDialog(){if($('#dialog').open)$('#dialog').close();}
+function openReplace(){openDialog('Start a fresh session?','<p>You have a saved session in this browser. Starting this quiz will replace it. You can return to the home screen to resume or review that session.</p><div style="display:flex;gap:10px;margin-top:22px"><button class="secondary" id="keep-btn">Keep saved session</button><button class="primary" id="confirm-start">Start fresh '+icon('arrow')+'</button></div>');}
+function openDiscard(){openDialog('Discard the saved session?','<p>This removes the saved answers and progress for your last session in this browser.</p><div style="display:flex;gap:10px;margin-top:22px"><button class="secondary" id="keep-btn">Keep session</button><button class="primary" id="confirm-discard">Discard session</button></div>');}
+const SOURCES=[
+ ['Apple','Designing for tvOS','https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos/'],
+ ['Apple','Focus and selection','https://developer.apple.com/design/human-interface-guidelines/focus-and-selection/'],
+ ['Android Developers','TV navigation','https://developer.android.com/training/tv/get-started/navigation'],
+ ['Android Developers','Playback controls on TV','https://developer.android.com/training/tv/playback/controls'],
+ ['Samsung Developer','Input methods','https://developer.samsung.com/smarttv/design/input-methods.html'],
+ ['Samsung Developer','Design principles','https://developer.samsung.com/smarttv/design/design-principles.html'],
+ ['Amazon Developer','Fire TV design and user experience','https://www.developer.amazon.com/docs/fire-tv/design-and-user-experience-guidelines.html'],
+ ['W3C','Web Content Accessibility Guidelines 2.2','https://www.w3.org/TR/WCAG22/']
+];
+function openResource(kind){
+ if(kind==='help')openDialog('A little focus. A lot to learn.','<h3>Choose your pace</h3><p><strong>Essentials</strong> gives you 12 randomized questions with every topic represented. <strong>Deep dive</strong> covers all 40. <strong>Topic practice</strong> includes all four questions from each topic you select.</p><h3>Choose how you learn</h3><p><strong>Study mode</strong> explains each answer right away. <strong>Test mode</strong> saves the explanations for your results. There is no timer and no penalty for taking your time.</p><h3>One answer, one point</h3><p>Choose the best answer and check or submit it. A submitted answer is locked for that attempt. You can revisit completed questions using Previous or the numbered question map. Results show your score, topic breakdown, and every explanation.</p><h3>Keyboard controls</h3><div class="keys"><span><kbd>1</kbd>–<kbd>4</kbd></span><span>Choose an answer in its displayed order.</span><span><kbd>↑</kbd><kbd>↓</kbd></span><span>Move and select within an answer group.</span><span><kbd>Tab</kbd></span><span>Move between controls.</span><span><kbd>Enter</kbd><kbd>Space</kbd></span><span>Activate the focused control.</span><span><kbd>Esc</kbd></span><span>Close this dialog.</span></div><div class="note-box">Your latest session is saved in this browser when local storage is available. New sessions, retakes, and missed-question practice replace that saved session. Download results first if you want to keep them.</div>');
+ if(kind==='privacy')openDialog('Your learning stays with you.','<h3>Local progress</h3><p>This file runs entirely in your browser. It has no accounts, tracking scripts, external fonts, or required network requests. Your latest session is stored locally when your browser permits it.</p><h3>Different devices, separate progress</h3><p>The same HTML works as a local file or on GitHub Pages. Each browser and device keeps its own progress; sessions do not sync. Moving from a local file to the hosted version also starts a separate save.</p><h3>When storage is unavailable</h3><p>You can still finish the quiz in the current tab. Closing or refreshing the tab may clear that session. Save your results as a text file to keep a copy.</p><h3>External references</h3><p>The reading links in Field notes open official documentation in a new tab. They need an internet connection and follow their respective sites’ privacy policies.</p>');
+ if(kind==='notes')openDialog('Field notes for the living room.','<h3>Keep these principles close</h3><ul><li><strong>Orientation comes first.</strong> Make focus visible, movement predictable, and return paths familiar.</li><li><strong>Distance changes the design.</strong> Test type, density, contrast, and safe areas on a TV from the sofa.</li><li><strong>Discovery is a viewing task.</strong> Useful structure and honest availability help people choose with confidence.</li><li><strong>Playback is the product.</strong> Seeking, captions, live position, and recovery deserve the same care as browsing.</li><li><strong>Measure the whole experience.</strong> Pair meaningful play with quality, access, and viewer control.</li></ul><h3>Go deeper with official guidance</h3><p>These are supporting references, not a single universal TV specification. Check current requirements for each platform and device.</p>'+SOURCES.map(function(s){return '<a class="source-link" href="'+s[2]+'" target="_blank" rel="noopener noreferrer"><span>'+s[1]+'<small>'+s[0]+'</small></span>'+icon('external')+'</a>';}).join('')+'<div class="note-box"><strong>About this question bank</strong><br>40 original scenarios cover the requested TV UX and OTT syllabus. The linked source conversation exposed placeholders instead of its guide text, so this is a reconstruction of the topic coverage, supported by the references above. It is not a verbatim adaptation. Reference check: 23 October 2026.</div>');
+}
+function handleKeys(e){
+ if(e.altKey||e.ctrlKey||e.metaKey)return;
+ const target=e.target;
+ if(target.closest('[role=radiogroup]')&&['ArrowRight','ArrowDown','ArrowLeft','ArrowUp','Home','End'].includes(e.key)){
+  const group=target.closest('[role=radiogroup]'),buttons=$$('button[role=radio]:not([disabled])',group);
+  if(!buttons.length)return;
+  const active=buttons.indexOf(target.closest('button'));if(active<0)return;
+  if(buttons[active].getAttribute('aria-disabled')==='true')return;
+  e.preventDefault();const step=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;
+  const n=e.key==='Home'?0:e.key==='End'?buttons.length-1:(active+step+buttons.length)%buttons.length;
+  buttons[n].click();buttons[n].focus();return;
+ }
+ if(!$('#dialog').open&&!$('#quiz-view').hidden&&/^[1-4]$/.test(e.key)&&!e.repeat&&!target.matches('input,textarea,select')){
+  const buttons=$$('[data-choice]'),b=buttons[Number(e.key)-1];
+  if(b&&b.getAttribute('aria-disabled')!=='true'){e.preventDefault();b.click();b.focus();}
+ }
+}
+init();
+</script>
+</body>
+</html>
