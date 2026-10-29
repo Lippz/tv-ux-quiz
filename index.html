@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#173c31">
-<meta name="description" content="A practical, interactive quiz on TV UX and OTT design. 40 scenario-based questions, 10 topics, instant explanations, and focused practice.">
+<meta name="description" content="A practical, interactive quiz on TV UX and OTT design. 60 scenario-based questions, 10 topics, instant explanations, and focused practice.">
 <title>Focus — The TV & OTT UX Quiz</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173c31'/%3E%3Cpath d='M18 27v-9h9m10 0h9v9m0 10v9h-9m-10 0h-9v-9' stroke='%23d4ed92' stroke-width='5' fill='none'/%3E%3C/svg%3E">
 <style>
@@ -28,6 +28,7 @@
 .mode-meta{grid-column:2;grid-row:2;font-size:10px;display:flex;flex-direction:row;gap:7px;align-items:center}
 .mode-meta i{display:block}
 }
+.q-figure{margin:20px 0 0;padding:14px 14px 11px;background:#f3f6ec;border:1px solid #e0e6d9;border-radius:12px}.q-figure svg{display:block;width:100%;height:auto;max-height:300px}.q-figure figcaption{font-size:11px;line-height:1.6;color:var(--sub);margin-top:9px}.review-body .q-figure{margin:0 0 14px}.fig text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.fig .scr{fill:#173c31}.fig .bez{fill:none;stroke:#0b1f19;stroke-width:16}.fig .card{fill:#3d6050}.fig .card2{fill:#6a8a63}.fig .ui{fill:#2c5547}.fig .accent{fill:#d6ee98}.fig .on-accent{fill:#173c31;font-size:13px;font-weight:700}.fig .txt{fill:#eef4e4;font-size:14px;font-weight:600}.fig .sm{fill:#b3c8ae;font-size:11px;font-weight:500}.fig .lbl{fill:#3e5448;font-size:12px;font-weight:650}.fig .foc{fill:none;stroke:#d6ee98;stroke-width:3}.fig .hover{fill:none;stroke:#f0c75e;stroke-width:3}.fig .dash{fill:none;stroke:#8fa985;stroke-width:1.5;stroke-dasharray:5 4}.fig .arr{fill:none;stroke:#3e5448;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.fig .warn{fill:none;stroke:#c2503f;stroke-width:2.5}.fig .now{stroke:#f0c75e;stroke-width:2}@media(max-width:760px){.q-figure{padding:10px 10px 9px;margin-top:16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media print{.topbar,.nav,.bottom-note,.results-actions,.review-tabs,.toast,.skip,dialog{display:none!important}body{background:white;color:#111}.wrap{max-width:100%;padding:0}.results{max-width:100%;padding:0}.result-hero{break-inside:avoid}.review-item{break-inside:avoid}.review-body{display:block}.review-list{gap:10px}}
 </style>
@@ -91,7 +92,7 @@
 </div>
 </div>
 <div class="stats-bar" aria-label="Quiz at a glance">
-<div class="stat"><span class="stat-value">40</span><span class="stat-label">Scenario-based<br>questions</span></div>
+<div class="stat"><span class="stat-value">60</span><span class="stat-label">Scenario-based<br>questions</span></div>
 <div class="stat"><span class="stat-value">10</span><span class="stat-label">Essential<br>design topics</span></div>
 <div class="stat"><span class="stat-value">0</span><span class="stat-label">Timers or<br>pressure</span></div>
 <div class="stat"><span class="stat-value">∞</span><span class="stat-label">Room to learn<br>and try again</span></div>
@@ -101,14 +102,14 @@
 <div class="section-top"><h2 id="setup-title">Make it your session.</h2><p>A quick check-in or the whole picture. You choose.</p></div>
 <div class="mode-grid" id="modes" role="radiogroup" aria-label="Quiz length">
 <button class="mode-card" role="radio" aria-checked="true" data-mode="essentials"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Essentials</h3><p>A little of every topic.</p></div><span class="mode-meta">12 questions<i></i>~8 minutes</span></button>
-<button class="mode-card" role="radio" aria-checked="false" data-mode="deep"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Deep dive</h3><p>The complete knowledge check.</p></div><span class="mode-meta">40 questions<i></i>~25 minutes</span></button>
+<button class="mode-card" role="radio" aria-checked="false" data-mode="deep"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Deep dive</h3><p>The complete knowledge check.</p></div><span class="mode-meta">60 questions<i></i>~35 minutes</span></button>
 <button class="mode-card" role="radio" aria-checked="false" data-mode="practice"><div class="mode-top"><svg class="icon" aria-hidden="true"><use href="#i-focus"/></svg><span class="radio-mark" aria-hidden="true"></span></div><div><h3>Topic practice</h3><p>Give a specific skill some focus.</p></div><span class="mode-meta" id="practice-meta">Choose your topics</span></button>
 </div>
-<div id="topic-picker" class="topic-picker" hidden><p id="picker-label">Pick one or more topics. <strong id="picker-count">4 questions</strong></p><div class="topic-chips" id="topic-chips" role="group" aria-labelledby="picker-label"></div></div>
+<div id="topic-picker" class="topic-picker" hidden><p id="picker-label">Pick one or more topics. <strong id="picker-count">6 questions</strong></p><div class="topic-chips" id="topic-chips" role="group" aria-labelledby="picker-label"></div></div>
 <div class="setup-bottom"><div class="feedback-setting"><div class="segmented" role="radiogroup" aria-label="When to show explanations"><button class="segment" role="radio" aria-checked="true" data-feedback="study">Study mode</button><button class="segment" role="radio" aria-checked="false" data-feedback="test">Test mode</button></div><p class="setting-note" id="feedback-note">An explanation after<br>every answer.</p></div><button class="primary" id="start-btn">Start the quiz <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
 </section>
 <section class="syllabus" aria-labelledby="syllabus-title">
-<div class="section-top syllabus-head"><h2 id="syllabus-title">The full picture.</h2><span class="eyebrow">10 TOPICS · 4 QUESTIONS EACH</span></div>
+<div class="section-top syllabus-head"><h2 id="syllabus-title">The full picture.</h2><span class="eyebrow">10 TOPICS · 6 QUESTIONS EACH</span></div>
 <div class="topic-grid" id="topic-grid"></div>
 </section>
 </section>
@@ -140,10 +141,10 @@ const BANK=[
     "title": "The way back",
     "prompt": "A viewer opens a film from the seventh card in a horizontal row. After reading its details, they press Back. Where should focus usually return?",
     "options": [
-      "The first card in the same row",
-      "The same film, with the row position restored",
-      "The primary navigation item for that page",
-      "The first card in the next content row"
+      "The first card of that row, scrolled back to its start",
+      "The same film card, in the same row position",
+      "The top navigation bar, so every section is in reach",
+      "The hero banner at the top of the page"
     ],
     "answer": 1,
     "explanation": "Restore the originating card and scroll position so the viewer can continue comparing titles. Resetting to the start adds remote presses and forces them to reconstruct their place. If the original item no longer exists, use a predictable nearby fallback.",
@@ -155,10 +156,10 @@ const BANK=[
     "title": "A moving target",
     "prompt": "New recommendations arrive while a viewer is moving through a content row. What is the strongest default?",
     "options": [
-      "Insert them ahead of the focused card immediately",
-      "Move focus to the highest-ranked new recommendation",
-      "Keep the focused item stable and apply updates without displacing it",
-      "Return focus to the row heading before reordering"
+      "Insert them right after the focused card, where they're most visible",
+      "Refresh the row and move focus to the top new recommendation",
+      "Keep the focused card in place; apply updates around it",
+      "Reload the whole page so every row reflects the new ranking"
     ],
     "answer": 2,
     "explanation": "Maintain item identity and avoid moving the viewer's target during interaction. Defer disruptive reordering or reconcile the data while preserving focus. A more relevant recommendation is not useful if its arrival breaks control.",
@@ -170,10 +171,10 @@ const BANK=[
     "title": "Modal boundaries",
     "prompt": "A subtitle dialog opens over a playing video. How should its focus behave?",
     "options": [
-      "Move into the dialog, stay within it, then return to its trigger",
-      "Remain on the player while the dialog accepts pointer clicks",
-      "Jump to the first item on the page after dismissal",
-      "Allow Down to move from the dialog into background controls"
+      "Move in, stay contained, then return to the subtitle button",
+      "Stay on the player so playback controls remain one press away",
+      "Go to the dialog, and after closing land on the player's first control",
+      "Go to the dialog, letting Down reach the playback bar beneath it"
     ],
     "answer": 0,
     "explanation": "The active dialog needs a meaningful initial target and a contained navigation scope. Closing it should restore focus to the control that opened it, or a logical fallback. This prevents hidden background actions from firing.",
@@ -185,14 +186,29 @@ const BANK=[
     "title": "Focus is not selection",
     "prompt": "A viewer moves focus across film posters. Which behavior best distinguishes focus from activation?",
     "options": [
-      "Each focused poster immediately opens its detail page",
-      "A highlighted poster is automatically added to the watchlist",
-      "A focused poster starts full playback after every movement",
-      "The poster visibly highlights; Select performs its main action"
+      "Focusing a poster opens its details after a one-second pause",
+      "Focusing a poster starts its trailer full screen with sound",
+      "Focus changes the background art; Select adds the title to the watchlist",
+      "It highlights on focus, and pressing Select opens or plays it"
     ],
     "answer": 3,
     "explanation": "Focus indicates the current interaction target. Activation is a separate commitment. Lightweight previews may be appropriate when controlled and delayed, but moving through a row should not unexpectedly navigate away or start a full viewing session.",
     "takeaway": "Make the target obvious before asking for commitment."
+  },
+  {
+    "id": "focus-5",
+    "topic": "focus",
+    "title": "Focus that won't stop",
+    "prompt": "A viewer holds Down to move through a long grid. On older TVs, focus keeps moving for two seconds after they let go. What is the best fix?",
+    "options": [
+      "Stop on release and drop repeats the UI can't keep up with",
+      "Ignore held keys so each move needs a separate press",
+      "Slow down the key repeat rate on every TV model",
+      "Add a Back to top button at the end of the grid"
+    ],
+    "answer": 0,
+    "explanation": "When rendering is slower than the remote's repeat rate, key events pile up and focus keeps travelling after the viewer lets go. Process held keys at a pace the device can draw, discard stale repeats, and stop the moment the key is released. Acceleration helps on long lists as long as it stays controllable.",
+    "takeaway": "Focus should stop when the viewer stops."
   },
   {
     "id": "distance-1",
@@ -200,10 +216,10 @@ const BANK=[
     "title": "A bigger screen, a smaller view",
     "prompt": "A mobile catalog is enlarged to fill a 55-inch TV. Test viewers still struggle to scan it from a sofa. What is the best next design move?",
     "options": [
-      "Keep the density and increase poster resolution",
-      "Rework hierarchy, type, spacing, and density at viewing distance",
-      "Add a permanent magnifying-glass mode to the mobile layout",
-      "Move secondary labels to hover-only tooltips"
+      "Keep the layout and supply 4K poster artwork",
+      "Redesign hierarchy, type size, and density for the sofa",
+      "Scale the whole mobile layout up by 150% for TV",
+      "Keep the density but add a larger focus highlight to guide the eye"
     ],
     "answer": 1,
     "explanation": "Screen size alone does not determine readability; viewing distance and visual angle matter. Build a clear hierarchy with fewer competing elements, concise labels, and readable typography. Validate on a real TV from typical seating positions.",
@@ -215,10 +231,10 @@ const BANK=[
     "title": "The edge of the picture",
     "prompt": "A primary action is clipped on one test TV but looks fine in a desktop emulator. What should the team investigate first?",
     "options": [
-      "Whether the action needs a longer label",
-      "Whether to hide the action on smaller televisions",
-      "Overscan, safe-area guidance, and the target device's display settings",
-      "Whether to replace every edge-to-edge image"
+      "Whether the button label is too long for its container",
+      "Whether the emulator uses a different screen resolution",
+      "Overscan, safe-area margins, and that TV's picture settings",
+      "Whether the TV is running an older cached build of the app"
     ],
     "answer": 2,
     "explanation": "Some display configurations crop the image near its edges. Keep critical text, actions, and focus effects inside appropriate safe regions, while artwork may extend outward. Check platform guidance and actual devices rather than applying one universal margin.",
@@ -230,10 +246,10 @@ const BANK=[
     "title": "A focus ring with room to breathe",
     "prompt": "A poster grows on focus and gets cropped by its content row. Which fix addresses the design problem?",
     "options": [
-      "Reserve space for focused scale, elevation, and outlines",
-      "Remove the visible focus treatment everywhere",
-      "Reduce all poster artwork to low-resolution thumbnails",
-      "Move the selected poster to a different screen"
+      "Leave room in the layout for the focused size and outline",
+      "Let the focused poster overlap the row title above it",
+      "Keep the scale effect, but only on larger TV models",
+      "Hide the row title whenever a poster in that row has focus"
     ],
     "answer": 0,
     "explanation": "A component's focused state needs layout space as well as a visual treatment. Allow its outline, scale, and shadow to render without collision or clipping. The exact treatment should follow the platform and remain clear from the sofa.",
@@ -245,14 +261,29 @@ const BANK=[
     "title": "Readability under real conditions",
     "prompt": "Which test provides the most useful evidence that a TV interface is legible?",
     "options": [
-      "Reviewing only a full-resolution screenshot at a desk",
-      "Checking only that text meets a chosen pixel size",
-      "Asking the designer to zoom out in the design tool",
-      "Testing representative TVs from seating distance, with varied lighting"
+      "Reviewing screenshots at 100% zoom on a large desktop monitor",
+      "Checking every text style against a minimum font-size rule",
+      "Viewing the design on the team's newest high-end TV in the office",
+      "Several real TVs, viewed from the sofa in varied lighting"
     ],
     "answer": 3,
     "explanation": "Typography, contrast, compression, display processing, and lighting interact in the living room. Use realistic content and people with varied vision. A fixed font-size rule can support design decisions but cannot replace viewing-distance testing.",
     "takeaway": "Evaluate readability in the environment where it matters."
+  },
+  {
+    "id": "distance-5",
+    "topic": "distance",
+    "title": "Bright panels, thin lines",
+    "prompt": "A TV design uses large pure-white panels and 1-pixel divider lines. In a dim living room, testers report glare and lines that flicker. What is the best response?",
+    "options": [
+      "Keep the design and suggest viewers lower their TV brightness",
+      "Use darker or softer surfaces and thicker, simpler lines",
+      "Keep the white panels and make the 1-pixel lines lighter grey",
+      "Switch to a 4K layout so the thin lines render more sharply"
+    ],
+    "answer": 1,
+    "explanation": "Large bright areas can be uncomfortable in a dark room and can bloom on some displays, while hairlines can shimmer or vanish after the TV scales and processes the picture. Prefer dark or muted surfaces for large areas and sturdier strokes, then check the result on real TVs in typical lighting.",
+    "takeaway": "Design for a bright, processed TV picture, not a desk monitor."
   },
   {
     "id": "discovery-1",
@@ -260,10 +291,10 @@ const BANK=[
     "title": "Too many rows, too little help",
     "prompt": "A home page offers 25 recommendation rows, but viewers take a long time to choose. What is the most useful first response?",
     "options": [
-      "Add more rows so every genre is represented",
-      "Prioritize clear viewing intents and test paths to a meaningful play",
-      "Hide all row labels to reduce visible text",
-      "Rank every row only by poster click-through rate"
+      "Add genre rows so every viewer finds their taste represented",
+      "Organize rows around viewing intents and test time to play",
+      "Make the posters larger so fewer rows fit on each screen",
+      "Reorder the rows by each row's overall click-through rate"
     ],
     "answer": 1,
     "explanation": "Organize around recognizable tasks such as continuing a series, finding something short, or browsing a genre. Test whether the structure helps people choose and start suitable content. A larger catalog surface is not automatically better discovery.",
@@ -275,10 +306,10 @@ const BANK=[
     "title": "Continue what, exactly?",
     "prompt": "What information is most useful on a Continue Watching card?",
     "options": [
-      "Only the series title and an unlabeled progress bar",
-      "The production studio, bitrate, and original release territory",
-      "The specific episode, meaningful progress, and an obvious Resume action",
-      "A generic Play action that always starts the series from episode one"
+      "Series title, show artwork, and a thin progress bar",
+      "Series title, rating, genre, and a Play button",
+      "Episode name and number, progress, and Resume",
+      "Series title with a Play action that starts the next unwatched episode"
     ],
     "answer": 2,
     "explanation": "Resume needs to communicate the actual item and likely playback position. Identify the episode where relevant, show understandable progress, and use a clear action. A way to remove unwanted entries also helps viewers control this personal surface.",
@@ -290,10 +321,10 @@ const BANK=[
     "title": "Search with a remote",
     "prompt": "Remote text entry is slow. Which search design best reduces effort without excluding viewers?",
     "options": [
-      "Useful suggestions and forgiving matching, with voice as an optional input",
-      "Voice-only search with no on-screen keyboard",
-      "Exact-title matching with results after the complete query",
-      "A full desktop filter panel before any results appear"
+      "Suggestions as you type, typo tolerance, and optional voice",
+      "Voice search as the main entry, with the keyboard behind a menu",
+      "Exact-title search that returns results after the full query",
+      "A full filter panel (genre, year, rating) shown before any results"
     ],
     "answer": 0,
     "explanation": "Reduce typing through query suggestions, recent searches where appropriate, and tolerant matching. Offer voice where supported, while retaining a remote-operable alternative. Results should help people recover from partial queries and mistakes.",
@@ -305,14 +336,29 @@ const BANK=[
     "title": "The unavailable title",
     "prompt": "A subscriber opens a film that requires a separate rental. What should its detail page do?",
     "options": [
-      "Show Play and reveal the charge only after it is pressed",
-      "Hide the title after the detail page has loaded",
-      "Send the viewer to a generic error page",
-      "Explain availability and price before offering a clear rental action"
+      "Show Play, then reveal the rental price in a confirmation step",
+      "Hide rental titles from subscribers to avoid disappointment",
+      "Show a 'Not included' badge and no action on the page",
+      "Show the price up front with a 'Rent for $3.99' action"
     ],
     "answer": 3,
     "explanation": "Distinguish included, rental, purchase, and unavailable states before the viewer commits. Use honest action labels and relevant next steps. Discovery, entitlement, and commerce need to agree about what the viewer can actually watch.",
     "takeaway": "Set the right expectation before the primary action."
+  },
+  {
+    "id": "discovery-5",
+    "topic": "discovery",
+    "title": "The trailer that talks first",
+    "prompt": "The home page's hero banner starts a trailer with sound as soon as it gets focus. Some viewers like it; others find it intrusive. What is the strongest approach?",
+    "options": [
+      "Keep it as is, since previews with sound lift engagement",
+      "Remove video previews and show static artwork only",
+      "Delay it, keep sound low, and offer a setting to turn it off",
+      "Play it muted, then unmute after five seconds of focus"
+    ],
+    "answer": 2,
+    "explanation": "Previews can help people judge a title, but sudden sound and motion disrupt a shared room. A short delay avoids triggering on every focus move, a calm default reduces surprise, and a setting gives control — Netflix, for example, lets members turn off autoplay previews.",
+    "takeaway": "Previews should inform, not ambush."
   },
   {
     "id": "player-1",
@@ -320,10 +366,10 @@ const BANK=[
     "title": "Scrub with confidence",
     "prompt": "A viewer holds Right to find a scene in a long film. What makes seeking easiest to control?",
     "options": [
-      "Commit a new network seek for every repeated key event",
-      "Show a responsive preview position and useful thumbnails, with clear commit behavior",
-      "Hide the target time until playback restarts",
-      "Use the same large jump for both a tap and a long hold"
+      "Seek the video immediately on every key press while holding",
+      "Move a preview marker with thumbnails, then seek once",
+      "Jump in fixed 10-second steps, however long the key is held",
+      "Show only the target time, without thumbnails, to save bandwidth"
     ],
     "answer": 1,
     "explanation": "Give immediate local feedback about the intended position. Thumbnails and time labels help orientation; acceleration can help with longer distances. Match commit and cancel behavior to the platform, and avoid overwhelming playback with redundant seeks.",
@@ -335,10 +381,10 @@ const BANK=[
     "title": "Captions behind the controls",
     "prompt": "Playback controls obscure two lines of captions. What is the strongest design response?",
     "options": [
-      "Turn captions off whenever controls are visible",
-      "Permanently move captions to an unreadable edge of the screen",
-      "Coordinate safe regions so controls and captions remain readable",
-      "Require viewers to pause before opening controls"
+      "Hide captions while the controls are on screen",
+      "Shrink the captions whenever the controls appear",
+      "Shift captions above the controls while they're visible",
+      "Make the controls semi-transparent over the captions"
     ],
     "answer": 2,
     "explanation": "Player overlays, caption placement, and essential image content share the same screen. Coordinate their layout so the viewer can use controls and read captions. Preserve caption settings and test the interaction with realistic multiline text.",
@@ -350,10 +396,10 @@ const BANK=[
     "title": "An interruption after pause",
     "prompt": "A viewer pauses, opens audio settings, and closes the panel. What should normally happen?",
     "options": [
-      "Preserve the paused state and restore the relevant control",
-      "Resume playback automatically because the settings panel closed",
-      "Restart the current chapter to establish a clean state",
-      "Exit the player and reopen the detail page"
+      "Stay paused, with focus back on the audio button",
+      "Resume playback, since closing a panel signals readiness",
+      "Stay paused and hide all controls to show the full picture",
+      "Resume from a few seconds earlier to re-establish context"
     ],
     "answer": 0,
     "explanation": "Closing a settings panel should not silently override the viewer's explicit pause. Keep playback state and focus coherent across overlays. Intentional playback changes should follow a clear action or an established platform behavior.",
@@ -365,14 +411,29 @@ const BANK=[
     "title": "The next episode",
     "prompt": "An episode ends and the next-episode countdown begins. Which approach best protects viewer control?",
     "options": [
-      "Make the countdown impossible to interrupt",
-      "Treat every autoplay start as proof of satisfaction",
-      "Hide the next episode's identity until it starts",
-      "Identify what is next, make cancellation easy, and respect autoplay preferences"
+      "Start the next episode as soon as credits begin, with no countdown",
+      "Show a countdown, with Cancel available only via the Back button",
+      "Show a countdown over a 'Next episode' tile without its title",
+      "Show what's next, an easy Cancel, and honor autoplay settings"
     ],
     "answer": 3,
     "explanation": "Autoplay can reduce effort, but the viewer needs to understand and control it. Show the upcoming title, offer a reachable cancel or watch-credits action, and honor preferences. Keep autoplay and deliberate plays distinct in measurement.",
     "takeaway": "Convenience works best when the viewer stays in control."
+  },
+  {
+    "id": "player-5",
+    "topic": "player",
+    "title": "The ad break, again",
+    "prompt": "In an ad-supported stream, a viewer rewinds 30 seconds just after an ad break and has to watch the same ads again. What is the better policy?",
+    "options": [
+      "Replay the ads, since rewinding re-enters the break",
+      "Don't replay a break the viewer has already watched",
+      "Disable rewinding for a few minutes after each ad break",
+      "Move all ad breaks to the end of the episode instead"
+    ],
+    "answer": 1,
+    "explanation": "Re-showing ads after a short rewind feels like a penalty and teaches viewers not to use seek. Track which breaks were watched in the session, mark break positions on the timeline, and keep transitions between content and ads smooth and at consistent loudness. Exact rules depend on ad contracts, so agree them with the ad team.",
+    "takeaway": "Ads shouldn't punish normal playback controls."
   },
   {
     "id": "live-1",
@@ -380,10 +441,10 @@ const BANK=[
     "title": "Two clocks in one guide",
     "prompt": "What should a useful electronic program guide make clear?",
     "options": [
-      "Only program popularity across channels",
-      "Channel rows, schedule time, the current-time marker, and available actions",
-      "A grid of equal-width titles without times",
-      "The broadcast date with no indication of what is on now"
+      "Channel logos and posters for what's on now, in a scrollable grid",
+      "Channels, time slots, a 'now' marker, and what you can do",
+      "A list of programs on now, sorted by popularity",
+      "Today's schedule for one channel at a time"
     ],
     "answer": 1,
     "explanation": "An EPG maps channels against time. Make the current moment, program duration, and focused program understandable. Distinguish actions such as Watch Live, Start Over, Remind, and Catch Up according to actual rights and availability.",
@@ -395,10 +456,10 @@ const BANK=[
     "title": "Back to the live edge",
     "prompt": "A viewer rewinds a live match by eight minutes. How should the player describe their position?",
     "options": [
-      "Keep showing LIVE with no indication of the delay",
-      "Label the whole program as on demand",
-      "Show that playback is behind live and provide a clear Go Live action",
-      "Replace the timeline with the scheduled program start time"
+      "Keep the LIVE badge, since the channel itself is still live",
+      "Show the clock time of the scene instead of a live label",
+      "Show '−8:00 behind live' with a Go Live button to jump back",
+      "Grey out the LIVE badge without saying how far behind"
     ],
     "answer": 2,
     "explanation": "The broadcast's live status and the viewer's current playback position are different facts. Make the delay understandable and offer a predictable way to return to the live edge when supported. Do not imply time-shift features exist if they do not.",
@@ -410,10 +471,10 @@ const BANK=[
     "title": "Same time, different duration",
     "prompt": "A viewer moves Down from a 90-minute film to a channel with 15-minute programs. How should an EPG usually preserve orientation?",
     "options": [
-      "Keep a meaningful time anchor and focus the program at that time on the next channel",
-      "Always select the first program of the day on the next channel",
-      "Jump to whichever program has the longest title",
-      "Return to the current-time marker on every vertical move"
+      "Keep a time anchor and focus the program airing at that time",
+      "Focus the program starting closest to the current clock time",
+      "Keep the same column position, regardless of program times",
+      "Focus the first program that is fully visible on screen"
     ],
     "answer": 0,
     "explanation": "Vertical movement should preserve a logical time reference, even when program widths differ. Define and test the mapping at boundaries and during schedule updates. A stable time anchor makes channel comparison predictable.",
@@ -422,17 +483,32 @@ const BANK=[
   {
     "id": "live-4",
     "topic": "live",
-    "title": "Catch-up is not universal",
-    "prompt": "A viewer selects yesterday's program in an EPG. What should determine the action offered?",
+    "title": "Catch-up is not automatic",
+    "prompt": "Yesterday's match is inside the channel's 7-day catch-up window, and a recording exists. A viewer on a phone selects it. What else must be true before offering Catch Up?",
     "options": [
-      "The program's popularity score",
-      "Whether its poster uses the current brand style",
-      "The number of channels in the subscription",
-      "Replay rights, entitlement, availability window, and device capability"
+      "Nothing more — the window and the recording are enough",
+      "The program had good ratings when it first aired",
+      "The viewer watched at least part of the live broadcast",
+      "The rights and the viewer's plan cover this program on this device"
     ],
     "answer": 3,
-    "explanation": "A past schedule entry does not guarantee a playable recording. Offer Catch Up only when the program is available to that viewer on that device. Explain unavailable states and present a useful alternative without promising unsupported access.",
+    "explanation": "A schedule entry and a stored recording do not guarantee playback. Some programs, such as sports, are excluded from catch-up; some rights cover the TV but not mobile; and the viewer's package must include it. Offer Catch Up only when it will actually play, and explain unavailable states with a useful alternative.",
     "takeaway": "Availability must drive the action, not just the schedule."
+  },
+  {
+    "id": "live-5",
+    "topic": "live",
+    "title": "Channel surfing",
+    "prompt": "A viewer presses Channel Up repeatedly while watching live TV full screen. What should the interface do?",
+    "options": [
+      "Open the full program guide so they can see every channel",
+      "Switch fast and show a brief now/next banner that fades away",
+      "Wait for each channel to start before accepting the next press",
+      "Show channel information only after the viewer presses Info"
+    ],
+    "answer": 1,
+    "explanation": "Zapping is fast scanning. Keep switching responsive, let repeated presses skip ahead without waiting for each stream to start, and show lightweight now/next information that fades away on its own. The full guide is a separate, deliberate task.",
+    "takeaway": "Support fast scanning without heavy screens."
   },
   {
     "id": "platforms-1",
@@ -440,10 +516,10 @@ const BANK=[
     "title": "One product, several platforms",
     "prompt": "A team is adapting the same streaming service to tvOS, Android TV, and Samsung TV. What should it share and what should it adapt?",
     "options": [
-      "Share brand and content logic; adapt focus, input, and system behavior to each platform",
-      "Use identical key mappings and Back behavior on every device",
-      "Copy the phone interaction model and change only the artwork",
-      "Rebuild the catalog taxonomy independently on every platform"
+      "Share brand and catalog; adapt input and system behavior per platform",
+      "One design system with identical interactions on every device, for consistency",
+      "Start from the phone app and adapt its layouts to the bigger screen",
+      "Design each platform separately to feel fully native, including the catalog"
     ],
     "answer": 0,
     "explanation": "A coherent service can retain its identity and content model while using the expected interaction conventions of each device. Input capabilities, focus systems, system integration, and review requirements differ. Validate the exact target platforms and models.",
@@ -455,10 +531,10 @@ const BANK=[
     "title": "The tvOS interaction model",
     "prompt": "Which design choice best fits the standard tvOS browsing model?",
     "options": [
-      "Require a tiny free-moving pointer for all catalog actions",
-      "Use directional focus with a distinct activation gesture",
-      "Treat every remote movement as a touchscreen swipe over content",
-      "Require a long press to make focus visible"
+      "A free-moving on-screen pointer controlled by the touch surface",
+      "Focus moves between items; clicking the clickpad selects",
+      "Swipes scroll the content directly, like a touchscreen",
+      "Focus appears after the first swipe and fades after a few seconds"
     ],
     "answer": 1,
     "explanation": "tvOS browsing centers on moving focus among components and then activating the intended one. Use the system's focus behavior and visible states. Account for focus-related scale and effects instead of treating the remote like a desktop mouse.",
@@ -470,13 +546,13 @@ const BANK=[
     "title": "Android TV and Back",
     "prompt": "In a standard Android TV app flow, repeated Back presses should generally do what?",
     "options": [
-      "Cycle forever between the navigation menu and home content",
-      "Always open an exit-confirmation dialog before leaving",
-      "Navigate predictably toward the app root and then leave the app",
-      "Return to the first poster while preventing app exit"
+      "Ask 'Exit the app?' before leaving, to prevent accidental exits",
+      "Return to the Home tab from anywhere, in a single press",
+      "Step back screen by screen to the root, then leave the app",
+      "Do nothing on the root screen, so the app can't be left by accident"
     ],
     "answer": 2,
-    "explanation": "Android TV guidance calls for predictable backward navigation without exit gating or infinite loops. Test the whole stack, including overlays and deep links. Special system entry points can have additional return requirements, so verify those separately.",
+    "explanation": "Android TV guidance asks for predictable Back behavior without exit gating or loops: ideally, Back from the root leaves the app. Other platforms differ — Amazon Fire TV allows an exit confirmation, and LG webOS 6.0 and later shows its own exit popup — so check each platform rather than reusing one rule. Test the whole stack, including overlays and deep links.",
     "takeaway": "Respect platform-specific Back behavior."
   },
   {
@@ -485,14 +561,29 @@ const BANK=[
     "title": "The missing button",
     "prompt": "Your Samsung TV design assigns a required action only to a colored remote button. What is the best fix?",
     "options": [
-      "Require viewers to buy a larger remote",
-      "Hide the action on models without that button",
-      "Replace the action with a voice-only command",
-      "Make it reachable through basic directional and Select controls"
+      "Keep it on the color button and show a hint about it on screen",
+      "Move it to a long press of Back on the Smart Remote",
+      "Keep it on the color button; Smart Remote users can use voice",
+      "Add an on-screen control reachable with arrows and Select"
     ],
     "answer": 3,
-    "explanation": "Samsung's basic remote controls must provide access to the app's features. Extra hardware buttons can be useful shortcuts, but their presence varies. Keep core tasks available with the supported basic controls and test actual target remotes.",
+    "explanation": "Samsung requires every feature to be reachable with the Smart Remote's basic buttons: arrows, Select, and Back. Color and number keys exist only on some remotes, and on the Smart Remote a long press of Back is reserved for exiting. Keep extra buttons as shortcuts and test the actual target remotes.",
     "takeaway": "Hardware shortcuts should not become hardware requirements."
+  },
+  {
+    "id": "platforms-5",
+    "topic": "platforms",
+    "title": "Pointer meets arrows",
+    "prompt": "On an LG webOS TV, a viewer points the Magic Remote at a poster, then presses Right on the remote. What should happen?",
+    "options": [
+      "Focus moves right from the poster the pointer was on",
+      "Focus restarts from the first item on the page",
+      "Nothing — arrow keys are ignored while the pointer is active",
+      "The pointer moves one step right, like a mouse nudge"
+    ],
+    "answer": 0,
+    "explanation": "LG's Magic Remote has two modes: a free pointer and 5-way arrow navigation. Pressing an arrow switches to 5-way mode and hides the pointer, and LG requires every app to support 5-way mode as well. Keep hover and focus in sync so arrow navigation continues from where the viewer was pointing.",
+    "takeaway": "Pointer and focus should agree on where the viewer is."
   },
   {
     "id": "access-1",
@@ -500,13 +591,13 @@ const BANK=[
     "title": "A focus state everyone can find",
     "prompt": "A focused card differs only by a subtle red-to-green tint. What would improve accessibility?",
     "options": [
-      "Add a clear outline or shape/elevation cue with sufficient contrast",
-      "Use a faster color animation to attract attention",
-      "Remove focus from poster artwork",
-      "Show focus only after the viewer presses Select"
+      "Add a thick outline or scale change with strong contrast",
+      "Make the tint more saturated so the change is stronger",
+      "Add a subtle pulsing animation to the green tint",
+      "Swap red and green for blue and orange, which are colorblind-safe"
     ],
     "answer": 0,
-    "explanation": "Color alone is a fragile way to communicate state. A clear non-color cue, adequate contrast, and a visible focus indicator help people with varied vision. Labels and accessibility semantics should communicate state to assistive technology as well.",
+    "explanation": "Color alone is a fragile way to communicate state, whichever colors you pick. A clear non-color cue — an outline, scale, or elevation change — with adequate contrast helps people with varied vision. Labels and accessibility semantics should communicate state to assistive technology as well.",
     "takeaway": "Use more than color to communicate interaction state."
   },
   {
@@ -515,10 +606,10 @@ const BANK=[
     "title": "More than dialogue",
     "prompt": "What should high-quality captions communicate?",
     "options": [
-      "Only a summary of each scene",
-      "Dialogue plus relevant speaker identification and meaningful non-speech audio",
-      "Only music lyrics, leaving dialogue to lip-reading",
-      "All spoken words without regard to timing or readability"
+      "Dialogue only, verbatim, so the text stays uncluttered",
+      "Dialogue, who's speaking, and key sounds like [door slams]",
+      "Dialogue plus a description of what's happening on screen",
+      "Dialogue plus song lyrics, but no sound effects"
     ],
     "answer": 1,
     "explanation": "Captions make meaningful audio information available visually, including dialogue, relevant speaker cues, and sound information. Keep them synchronized and readable. Audio description serves a different purpose by conveying important visual information through audio.",
@@ -530,10 +621,10 @@ const BANK=[
     "title": "The unnamed control",
     "prompt": "A screen reader announces four player controls as 'button, button, button, button.' What is the priority fix?",
     "options": [
-      "Increase the icons' resolution",
-      "Add explanatory text only to the help page",
-      "Provide accurate accessible names, roles, states, and a logical focus order",
-      "Play an identical confirmation sound on all controls"
+      "Add tooltips that appear when a control gets focus",
+      "Add a voice guide explaining the controls in Settings",
+      "Give each control a name, role, and current state",
+      "Give each control a distinct confirmation sound"
     ],
     "answer": 2,
     "explanation": "Assistive technology needs meaningful semantics: what each control does and its current state. A play/pause control's label should match the action it will perform. Verify with the actual screen reader on the target platform.",
@@ -545,14 +636,29 @@ const BANK=[
     "title": "Motion without a requirement",
     "prompt": "An animated interface makes a viewer uncomfortable. Which response best supports access?",
     "options": [
-      "Disable the remote while transitions are playing",
-      "Ask the viewer to reduce the TV's brightness",
-      "Keep the animation because it is part of the brand",
-      "Respect reduced-motion preferences where available and offer calmer transitions"
+      "Shorten all animations to 100 ms so they're barely noticeable",
+      "Add a toggle that turns off all animation, focus effects included",
+      "Keep the motion, since it helps people follow focus changes",
+      "Follow the reduced-motion setting and use calmer transitions"
     ],
     "answer": 3,
     "explanation": "Motion should clarify changes without becoming a barrier. Reduce nonessential movement while keeping state changes understandable. Use platform accessibility settings when available, and test that the calmer experience retains focus visibility and feedback.",
     "takeaway": "Communicate change without requiring motion."
+  },
+  {
+    "id": "access-5",
+    "topic": "access",
+    "title": "The setting that didn't stick",
+    "prompt": "A viewer turns on audio description for one episode. When the next episode starts, it's back to the default soundtrack. What should the app do?",
+    "options": [
+      "Show a tip reminding viewers where the audio settings are",
+      "Remember it for the profile and apply it where available",
+      "Keep the choice only until the episode ends, to be safe",
+      "Ask before each episode whether to use audio description"
+    ],
+    "answer": 1,
+    "explanation": "Accessibility choices are rarely one-off. Persist audio description, caption, and language preferences for the active profile, and apply them to the next title when that track exists. If it doesn't, say so instead of silently switching.",
+    "takeaway": "Remember access needs so viewers don't re-enable them every time."
   },
   {
     "id": "analytics-1",
@@ -560,10 +666,10 @@ const BANK=[
     "title": "Clicks are up. Is discovery better?",
     "prompt": "A redesign raises poster click-through but also increases rapid exits after playback begins. What is the strongest evaluation?",
     "options": [
-      "Examine meaningful play starts, early abandonment, and discovery effort together",
-      "Declare success because more posters are clicked",
-      "Ignore abandonment because it happens after discovery",
-      "Measure only total catalog page views"
+      "Look at play starts, early exits, and search effort together",
+      "Call it a win — more clicks mean better discovery",
+      "Fix playback start speed, since the exits happen after discovery",
+      "Compare total viewing hours per user before and after"
     ],
     "answer": 0,
     "explanation": "A click can reflect interest, confusion, or misleading presentation. Evaluate downstream viewing quality alongside effort to find content. Define meaningful play explicitly, segment by context, and use research to understand whether viewers found what they intended.",
@@ -575,10 +681,10 @@ const BANK=[
     "title": "A precise startup metric",
     "prompt": "For a defined play attempt, how should time to first frame usually be measured?",
     "options": [
-      "From app installation to the first episode completion",
-      "From the intentional play request to the first rendered video frame",
-      "From page load to the first poster appearing",
-      "From subtitle selection to the first audio-language change"
+      "From app launch to the first video frame",
+      "From pressing Play to the first video frame on screen",
+      "From pressing Play until the player reports 'ready'",
+      "From the stream request to the first downloaded video segment"
     ],
     "answer": 1,
     "explanation": "Use clearly specified start and end events. Separate app launch, navigation, authorization, and playback startup, and distinguish cold starts and resumed sessions. Pair startup latency with failure rate so failed attempts do not disappear from the picture.",
@@ -590,10 +696,10 @@ const BANK=[
     "title": "What a remote tap cannot tell you",
     "prompt": "Which research approach best reveals focus-navigation problems?",
     "options": [
-      "Ask participants which screenshot looks more premium",
-      "Inspect a mouse-only desktop prototype",
-      "Observe representative tasks with real remotes, tracking errors and recovery",
-      "Count all D-pad presses without knowing the task"
+      "A survey asking viewers to rate how easy navigation feels",
+      "A click-through test of the designs on a desktop prototype",
+      "Watch people do real tasks with a real remote and TV",
+      "Heatmaps of D-pad presses from all production sessions"
     ],
     "answer": 2,
     "explanation": "Watch people attempt realistic tasks on representative devices. Record lost focus, wrong turns, backtracking, and recovery alongside completion and time. Remote-press counts gain meaning when connected to a task and the viewer's intent.",
@@ -605,14 +711,29 @@ const BANK=[
     "title": "An experiment with guardrails",
     "prompt": "A new home-page layout reduces time to first play. Before rolling it out, what else should the team check?",
     "options": [
-      "Whether it creates more analytics events",
-      "Whether every viewer clicked the hero banner",
-      "Whether it increases app-open counts in aggregate",
-      "Playback success, abandonment, accessibility, and results across device/user groups"
+      "Whether daily active users went up in the test group",
+      "Whether viewers clicked the new hero banner more often",
+      "Whether the design team prefers it in a final review",
+      "Guardrails: abandonment, errors, access, device groups"
     ],
     "answer": 3,
     "explanation": "A faster start may result from better discovery or from aggressive autoplay. Define deliberate and automatic starts separately, inspect quality and access guardrails, and segment results. Interpret the experiment with an appropriate baseline and research context.",
     "takeaway": "A winning metric needs guardrails and a clear definition."
+  },
+  {
+    "id": "analytics-5",
+    "topic": "analytics",
+    "title": "Did search work?",
+    "prompt": "The team wants one dashboard to judge whether TV search is working. Which signals are most telling?",
+    "options": [
+      "Number of searches per day and average query length",
+      "Zero results, retyped queries, and search-to-play rate",
+      "Search-bar clicks compared with home-page clicks",
+      "The top 20 search terms each week"
+    ],
+    "answer": 1,
+    "explanation": "More searches can mean interest or failure. Zero-result and reformulated queries show where search breaks down, and search-to-play shows whether people found something worth watching. Pair them with keypresses or time to a result, because typing with a remote is costly.",
+    "takeaway": "Measure whether searches end in watching."
   },
   {
     "id": "performance-1",
@@ -620,10 +741,10 @@ const BANK=[
     "title": "A slow network, a working remote",
     "prompt": "Catalog images load slowly on a weak connection. What should the UI prioritize?",
     "options": [
-      "Keep navigation responsive, preserve focus, and reserve stable content space",
-      "Block all remote input until every poster loads",
-      "Continuously reorder the grid as each image arrives",
-      "Move focus to a loading spinner after every failed request"
+      "Keep navigation responsive with stable placeholders",
+      "Show a full-screen spinner until the page has loaded",
+      "Load images as they arrive and let rows resize to fit",
+      "Disable navigation until the visible row's images have loaded"
     ],
     "answer": 0,
     "explanation": "Loading should not remove control. Stable placeholders reduce layout shifts; meaningful loading and retry states explain what is happening. Keep the navigation model coherent even when artwork or individual content requests are delayed.",
@@ -635,10 +756,10 @@ const BANK=[
     "title": "Interrupted halfway through",
     "prompt": "A network outage interrupts a film. Which recovery experience is strongest?",
     "options": [
-      "Show an error code with no further action",
-      "Explain the problem, offer retry, and preserve playback position where feasible",
-      "Restart from the beginning as soon as any connection returns",
-      "Open a purchase screen because playback failed"
+      "Show the error code and a Back button to the detail page",
+      "Explain, offer Retry, and keep the playback position",
+      "Retry silently in the background until the connection returns",
+      "Restart playback from the beginning when the network recovers"
     ],
     "answer": 1,
     "explanation": "Make recovery understandable and keep the viewer's context. Preserve position and preferences where feasible, avoid endless retry loops, and explain next steps. Do not infer an entitlement problem from a generic network failure.",
@@ -650,10 +771,10 @@ const BANK=[
     "title": "Fast in the emulator",
     "prompt": "An app performs well on a development machine but poorly on older TVs. What is the best next step?",
     "options": [
-      "Require a firmware reset before every session",
-      "Remove every loading state to make the app look faster",
-      "Profile representative lower-powered devices and optimize measured bottlenecks",
-      "Raise animation duration so lag feels intentional"
+      "Reduce animations everywhere, since they're the usual cause",
+      "Set a minimum supported TV model and drop older devices",
+      "Profile on older TVs and fix the measured bottlenecks",
+      "Test on a newer TV model to see whether the issue reproduces"
     ],
     "answer": 2,
     "explanation": "Real TVs expose CPU, memory, graphics, and input-latency limits that a desktop may hide. Profile actual bottlenecks, manage image and video resources, and test long sessions. Preserve focus identity when virtualizing content lists.",
@@ -665,14 +786,29 @@ const BANK=[
     "title": "A change in stream quality",
     "prompt": "Available bandwidth drops while a film is playing. What is the most reasonable playback strategy?",
     "options": [
-      "Always stop and ask the viewer to choose a bitrate",
-      "Keep requesting the highest quality regardless of stalls",
-      "Restart the film whenever video quality changes",
-      "Use adaptive playback to balance continuity and quality, with clear recovery on failure"
+      "Pause and ask the viewer to pick a lower quality",
+      "Keep the top quality and buffer longer before resuming",
+      "Switch to the lowest quality for the rest of the film",
+      "Let adaptive bitrate lower quality to keep playing"
     ],
     "answer": 3,
     "explanation": "Adaptive bitrate playback can adjust quality as conditions change, helping reduce stalls. It is not a guarantee of uninterrupted playback. Measure rebuffering, startup, errors, and picture quality together rather than maximizing resolution alone.",
     "takeaway": "Playback quality includes continuity as well as sharpness."
+  },
+  {
+    "id": "performance-5",
+    "topic": "performance",
+    "title": "The long cold start",
+    "prompt": "The app takes eight seconds to open on older TVs, showing a black screen most of that time. What helps most?",
+    "options": [
+      "Show a splash at once, then a usable home that fills in",
+      "Add an animated logo intro so the wait feels deliberate",
+      "Preload the entire catalog before showing the home page",
+      "Display a progress bar showing the percentage loaded"
+    ],
+    "answer": 0,
+    "explanation": "A black screen looks like a crash. Show feedback immediately, then prioritize what the viewer needs first — navigation, Continue Watching, the first rows — and load the rest progressively. Measure cold and warm starts on the lowest-end target devices.",
+    "takeaway": "Make the first seconds visible and useful."
   },
   {
     "id": "accounts-1",
@@ -680,10 +816,10 @@ const BANK=[
     "title": "Sign in from the sofa",
     "prompt": "A service requires account sign-in on a TV. Which approach best balances low effort and access?",
     "options": [
-      "Offer a secure device-link flow plus a usable remote-entry alternative",
-      "Require every password to be entered with the D-pad",
-      "Require a camera-equipped smartphone for all viewers",
-      "Display a permanent shared access code for the household"
+      "A code or QR to sign in on a phone, plus on-TV entry",
+      "Only an on-screen keyboard, so no second device is needed",
+      "Only a QR code, since nearly everyone has a phone nearby",
+      "A permanent household PIN shown in the app's settings"
     ],
     "answer": 0,
     "explanation": "A short-lived device code or QR-assisted flow can move complex entry to another device. Explain the steps and success state, handle expiry, and retain an accessible alternative. Never assume every viewer has a suitable phone nearby.",
@@ -695,10 +831,10 @@ const BANK=[
     "title": "One TV, several viewers",
     "prompt": "Why should Continue Watching and recommendations usually be profile-aware?",
     "options": [
-      "Every person in a household has the same viewing intent",
-      "Watch history, preferences, and age-related access can differ by viewer",
-      "It lets the app remove account-level settings",
-      "It prevents the need to support switching profiles"
+      "It increases the number of recommendations shown",
+      "Each viewer has their own history, tastes, and limits",
+      "It lets the account owner see what everyone watched",
+      "It makes ad targeting possible on shared devices"
     ],
     "answer": 1,
     "explanation": "A shared device is not a single user. Keep personal viewing state and relevant restrictions coherent for the active profile. Make profile identity visible and switching understandable so one person's history does not silently become another's.",
@@ -710,10 +846,10 @@ const BANK=[
     "title": "A blocked title in a child profile",
     "prompt": "A child profile encounters age-restricted content. What is the strongest behavior?",
     "options": [
-      "Allow playback if the title came from search",
-      "Hide the restriction once the viewer opens details",
-      "Apply restrictions consistently and provide an appropriate protected adult flow",
-      "Treat dismissing an error message as parental approval"
+      "Hide it in browse rows but allow it through search",
+      "Show it with a warning the child can dismiss",
+      "Block it on every path; unlock only with an adult PIN",
+      "Block it silently, showing nothing when it's requested"
     ],
     "answer": 2,
     "explanation": "Restrictions need to hold across browsing, search, deep links, and playback authorization. An adult action should require an appropriate protection mechanism rather than a cosmetic prompt. Explain the state without exposing an easy bypass.",
@@ -725,16 +861,229 @@ const BANK=[
     "title": "The analytics consent screen",
     "prompt": "Which analytics approach best supports viewer trust?",
     "options": [
-      "Collect raw passwords to diagnose sign-in failures",
-      "Retain all household viewing events forever by default",
-      "Treat shared-TV use as automatic consent from every viewer",
-      "Minimize data, explain purposes, and respect applicable consent and privacy controls"
+      "Collect everything now, and decide on uses later",
+      "Ask for consent once, during the account owner's sign-up",
+      "Anonymize all events and skip consent prompts entirely",
+      "Collect only what you need, say why, and honor choices"
     ],
     "answer": 3,
-    "explanation": "Collect data tied to a defined purpose, avoid sensitive secrets, and honor relevant privacy choices. Shared-device and child-profile contexts deserve deliberate treatment. Keep diagnostics useful through appropriate minimization and access controls.",
+    "explanation": "Collect data tied to a defined purpose, avoid sensitive secrets, and honor relevant privacy choices. One person's consent at sign-up doesn't cover everyone using a shared TV, and calling data 'anonymous' doesn't remove the need to follow applicable consent rules. Child profiles deserve deliberate treatment.",
     "takeaway": "Useful measurement does not require collecting everything."
+  },
+  {
+    "id": "accounts-5",
+    "topic": "accounts",
+    "title": "Who's watching?",
+    "prompt": "The app opens on a profile picker every time, and households find it a chore. What is the best adjustment?",
+    "options": [
+      "Skip the picker and always open the last-used profile",
+      "Keep the picker, with the last-used profile already focused",
+      "Remove profiles and keep one shared history per account",
+      "Show the picker only if the app was closed for 24 hours"
+    ],
+    "answer": 1,
+    "explanation": "The picker protects personal history and kids' restrictions, so silently reusing the last profile risks the wrong person's recommendations — or an adult profile opening for a child. Make the likely choice a single press, and protect switching out of a kids profile where needed.",
+    "takeaway": "Make the right profile one press away."
+  },
+  {
+    "id": "focus-6",
+    "topic": "focus",
+    "title": "Where focus starts",
+    "prompt": "A viewer opens a series they are partway through. The page has a Back link, a large Continue button, Trailer and My List buttons, and an episode row. Where should focus land when the page opens?",
+    "options": [
+      "On the Back link, the first element at the top left",
+      "On Continue S2 E4, the action most viewers came for",
+      "On the first episode in the row, so the season is visible",
+      "Nowhere, until the viewer presses a direction key"
+    ],
+    "answer": 1,
+    "explanation": "Every TV screen needs a defined initial focus. Put it on the most likely next action for this state, here resuming the next episode, so the common path is a single Select. Top-left ordering is a web habit, and no focus at all leaves the viewer guessing what a press will do. Define initial focus per state (new, in progress, finished, locked), not once per screen.",
+    "takeaway": "Decide where focus starts on every screen and in every state."
+  },
+  {
+    "id": "distance-6",
+    "topic": "distance",
+    "title": "Paused and forgotten",
+    "prompt": "A viewer pauses a film and leaves the room for half an hour. The paused frame and the player controls stay on screen at full brightness. What should the app do?",
+    "options": [
+      "Keep everything on screen so the viewer sees where they stopped",
+      "Exit the app after ten minutes to save power",
+      "Fade the controls and let the system screensaver start, keeping the position",
+      "Resume playback after five minutes so the picture keeps changing"
+    ],
+    "answer": 2,
+    "explanation": "A bright, static image left for a long time wastes power and, on some panels, risks image retention. Platforms expect apps to keep the screen awake only during active playback; once paused, fade the overlay and let the screensaver or the system's idle behavior take over. When the viewer returns, the film should be exactly where they left it.",
+    "takeaway": "Keep the screen awake only while something is playing."
+  },
+  {
+    "id": "discovery-6",
+    "topic": "discovery",
+    "title": "No spoilers, please",
+    "prompt": "A series' episode list shows a still and a full synopsis for every episode. Viewers still on season 1 complain that season 3 thumbnails reveal who survives. What is the best change?",
+    "options": [
+      "Keep stills and synopses, since they help viewers pick episodes",
+      "Remove the episode list and offer only a Continue button",
+      "Show only episode numbers, in every season",
+      "Use spoiler-safe art and text for episodes not yet reached"
+    ],
+    "answer": 3,
+    "explanation": "Episode metadata does different jobs before and after watching. For episodes beyond the viewer's progress, use neutral stills or series art and trim synopses that give away plot turns; keep full details for what they've watched. Sport has the same problem: replay and highlights rows can show final scores, so consider a no-spoilers option.",
+    "takeaway": "Discovery shouldn't spoil what the viewer hasn't watched."
+  },
+  {
+    "id": "player-6",
+    "topic": "player",
+    "title": "Is anyone there?",
+    "prompt": "Autoplay has played three episodes in a row without a single remote press. What is the most reasonable behavior?",
+    "options": [
+      "Keep playing indefinitely, since autoplay is switched on",
+      "Pause and ask if they're still watching; one press continues",
+      "Close the app and return to the TV's home screen",
+      "Lower the volume gradually until a key is pressed"
+    ],
+    "answer": 1,
+    "explanation": "After a long stretch without input the viewer may have fallen asleep or left. Carrying on burns data, moves Continue Watching past episodes nobody saw, and inflates watch time. A pause with a clear question, answered with one press, protects their place. Tune the threshold with data and keep it consistent with the autoplay setting.",
+    "takeaway": "Autoplay should stop when nobody is watching."
+  },
+  {
+    "id": "live-6",
+    "topic": "live",
+    "title": "The guide and the match",
+    "prompt": "A viewer opens the TV guide during a live match to see what's on next. What should happen to the match?",
+    "options": [
+      "Keep it playing in a preview or behind the guide, with sound",
+      "Pause the stream until the guide is closed",
+      "Stop the stream to save bandwidth while browsing",
+      "Switch to the guide's first channel so its preview starts"
+    ],
+    "answer": 0,
+    "explanation": "Live content often can't be paused, and someone checking the schedule doesn't want to miss a goal. Keep the current channel playing, as a preview window or behind a translucent guide, and start with focus on the program airing now on that channel. Closing the guide returns to full screen on the same channel.",
+    "takeaway": "Browsing the schedule shouldn't interrupt what's live."
+  },
+  {
+    "id": "platforms-6",
+    "topic": "platforms",
+    "title": "Beyond the app's walls",
+    "prompt": "A viewer stops an episode halfway and goes back to the Google TV home screen. What should the app have done so resuming is easy from there?",
+    "options": [
+      "Nothing; the app's own Continue Watching row is enough",
+      "Send a notification reminding them to finish the episode",
+      "Add it to the system's Continue watching row, deep-linked",
+      "Promote the series in the app's home-screen channel as new"
+    ],
+    "answer": 2,
+    "explanation": "TV platforms surface content outside the app: Continue watching (Watch Next) on Google TV, Top Shelf on tvOS, and system search and voice on most platforms. Publish in-progress titles there, make the deep link land on the exact episode and position, and remove items once they're finished. Many sessions start from these surfaces, not from the app's home page.",
+    "takeaway": "Design the entry points the system gives you, not just the app."
+  },
+  {
+    "id": "access-6",
+    "topic": "access",
+    "title": "Bigger text, broken cards",
+    "prompt": "A viewer turns on the TV's large-text setting. Card titles in your app now read 'The Long Wa…'. What is the best fix?",
+    "options": [
+      "Lock the app's text size so the system setting can't change it",
+      "Let titles wrap to two lines and show the full title on focus",
+      "Use a lighter font weight so longer titles fit",
+      "Hide titles and rely on poster art while the setting is on"
+    ],
+    "answer": 1,
+    "explanation": "System text scaling exists for people who need it, so ignoring it removes a real accommodation. Design cards that can grow: allow two-line titles, give metadata room, and expose the full title on focus and to screen readers. Test with the largest supported text setting on each target platform.",
+    "takeaway": "Layouts should make room for larger text, not fight it."
+  },
+  {
+    "id": "analytics-6",
+    "topic": "analytics",
+    "title": "One remote, three opinions",
+    "prompt": "Lab tests of a new home screen went well with single participants. After launch, households say choosing a film takes too long. What did the research most likely miss?",
+    "options": [
+      "A larger sample of single participants",
+      "A preference for a darker color theme",
+      "An expectation of a mobile-style menu",
+      "Choosing as a group, with one remote, at home"
+    ],
+    "answer": 3,
+    "explanation": "Living-room viewing is often shared: one person navigates while others comment, negotiate, or wander off. One participant at a desk misses that dynamic, along with distance, lighting, and household profiles. Add in-home or contextual sessions with co-viewers and watch how a group reaches a decision.",
+    "takeaway": "Research the room, not just the individual."
+  },
+  {
+    "id": "performance-6",
+    "topic": "performance",
+    "title": "The backdrop that can't keep up",
+    "prompt": "On the home page, a full-screen backdrop switches to each focused title's artwork. When a viewer scrolls quickly, focus lags and images flicker. What is the best fix?",
+    "options": [
+      "Swap the backdrop once focus rests, and cancel stale loads",
+      "Load each card's full-size backdrop before focus can move on",
+      "Remove focus animations but keep the instant backdrop swap",
+      "Ignore remote input until the current backdrop has loaded"
+    ],
+    "answer": 0,
+    "explanation": "Swapping large images on every focus step makes slower TVs fall behind the remote. Keep focus movement instant, wait until focus settles for a few hundred milliseconds before changing the backdrop, cancel requests for titles the viewer has already passed, and use images sized for the screen. Context arrives without costing responsiveness.",
+    "takeaway": "Let focus move first; decorate once it settles."
+  },
+  {
+    "id": "accounts-6",
+    "topic": "accounts",
+    "title": "Too many screens",
+    "prompt": "A viewer presses Play, but the plan's limit of two simultaneous streams is already reached. What should the TV show?",
+    "options": [
+      "A 'Playback error 1003' message with an OK button",
+      "A prompt to sign out of every other device",
+      "What's streaming, with options to stop one or upgrade",
+      "Nothing; it plays and silently stops the oldest stream"
+    ],
+    "answer": 2,
+    "explanation": "A stream limit is an entitlement rule, not a technical failure, so say what is happening in plain language. Show which devices are using the account, let the viewer stop one where the service allows it, and offer a plan with more screens. Never cut off another household member without warning.",
+    "takeaway": "Explain the limit and offer a way through."
   }
 ];
+const FIGURES={
+ "focus-1": {
+  "box": "0 0 520 236",
+  "caption": "The viewer opened Film 7 from a scrolled row, read its details, and now presses Back.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"300\" height=\"180\" rx=\"10\"/><text class=\"sm\" x=\"16\" y=\"28\">Trending now</text><rect class=\"card\" x=\"16\" y=\"44\" width=\"52\" height=\"74\" rx=\"5\"/><text class=\"txt\" x=\"42\" y=\"106\" text-anchor=\"middle\">5</text><rect class=\"card\" x=\"78\" y=\"44\" width=\"52\" height=\"74\" rx=\"5\"/><text class=\"txt\" x=\"104\" y=\"106\" text-anchor=\"middle\">6</text><rect class=\"card\" x=\"140\" y=\"44\" width=\"52\" height=\"74\" rx=\"5\"/><text class=\"txt\" x=\"166\" y=\"106\" text-anchor=\"middle\">7</text><rect class=\"card\" x=\"202\" y=\"44\" width=\"52\" height=\"74\" rx=\"5\"/><text class=\"txt\" x=\"228\" y=\"106\" text-anchor=\"middle\">8</text><rect class=\"card\" x=\"264\" y=\"44\" width=\"36\" height=\"74\" rx=\"5\"/><rect class=\"foc\" x=\"136\" y=\"40\" width=\"60\" height=\"82\" rx=\"7\"/><text class=\"sm\" x=\"166\" y=\"142\" text-anchor=\"middle\">opened from here</text><text class=\"sm\" x=\"16\" y=\"166\">◂ films 1–4 scrolled off screen</text><path class=\"arr\" d=\"M308 90H332M326 84l6 6-6 6\"/><rect class=\"scr\" x=\"340\" y=\"0\" width=\"180\" height=\"180\" rx=\"10\"/><text class=\"txt\" x=\"356\" y=\"40\" style=\"font-size:18px\">Film 7</text><rect class=\"ui\" x=\"356\" y=\"54\" width=\"140\" height=\"7\" rx=\"3\"/><rect class=\"ui\" x=\"356\" y=\"68\" width=\"112\" height=\"7\" rx=\"3\"/><rect class=\"accent\" x=\"356\" y=\"96\" width=\"68\" height=\"28\" rx=\"6\"/><text class=\"on-accent\" x=\"390\" y=\"115\" text-anchor=\"middle\">Play</text><rect class=\"ui\" x=\"432\" y=\"96\" width=\"72\" height=\"28\" rx=\"6\"/><rect x=\"396\" y=\"196\" width=\"72\" height=\"28\" rx=\"14\" fill=\"#fff\" stroke=\"#b9c6ad\"/><text class=\"lbl\" x=\"432\" y=\"215\" text-anchor=\"middle\">Back</text><path class=\"arr\" stroke-dasharray=\"5 5\" d=\"M392 210C300 226 200 222 168 188\"/><path class=\"arr\" d=\"M162 196l6-8 9 4\"/><text class=\"lbl\" x=\"268\" y=\"230\" style=\"font-size:16px\">?</text>"
+ },
+ "focus-6": {
+  "box": "0 0 520 236",
+  "caption": "The series page has just opened. No element has focus yet.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"520\" height=\"236\" rx=\"10\"/><text class=\"sm\" x=\"18\" y=\"28\">‹ Back</text><text class=\"txt\" x=\"18\" y=\"70\" style=\"font-size:24px\">Night Shift</text><text class=\"sm\" x=\"18\" y=\"92\">Season 2 · watched up to episode 3</text><rect class=\"accent\" x=\"18\" y=\"108\" width=\"150\" height=\"34\" rx=\"7\"/><text class=\"on-accent\" x=\"93\" y=\"130\" text-anchor=\"middle\">Continue S2 E4</text><rect class=\"ui\" x=\"178\" y=\"108\" width=\"88\" height=\"34\" rx=\"7\"/><text class=\"txt\" x=\"222\" y=\"130\" text-anchor=\"middle\" style=\"font-size:12px\">Trailer</text><rect class=\"ui\" x=\"276\" y=\"108\" width=\"98\" height=\"34\" rx=\"7\"/><text class=\"txt\" x=\"325\" y=\"130\" text-anchor=\"middle\" style=\"font-size:12px\">+ My List</text><text class=\"sm\" x=\"18\" y=\"172\">Episodes</text><rect class=\"card\" x=\"18\" y=\"182\" width=\"108\" height=\"42\" rx=\"5\"/><text class=\"txt\" x=\"72\" y=\"212\" text-anchor=\"middle\">E1</text><rect class=\"card\" x=\"136\" y=\"182\" width=\"108\" height=\"42\" rx=\"5\"/><text class=\"txt\" x=\"190\" y=\"212\" text-anchor=\"middle\">E2</text><rect class=\"card\" x=\"254\" y=\"182\" width=\"108\" height=\"42\" rx=\"5\"/><text class=\"txt\" x=\"308\" y=\"212\" text-anchor=\"middle\">E3</text><rect class=\"card\" x=\"372\" y=\"182\" width=\"108\" height=\"42\" rx=\"5\"/><text class=\"txt\" x=\"426\" y=\"212\" text-anchor=\"middle\">E4</text><rect class=\"card\" x=\"490\" y=\"182\" width=\"30\" height=\"42\" rx=\"5\"/>"
+ },
+ "distance-2": {
+  "box": "0 0 520 196",
+  "caption": "The same build and the same 1920 × 1080 layout. On the test TV, the button is cut off at the edge of the picture.",
+  "svg": "<text class=\"lbl\" x=\"0\" y=\"14\">Desktop emulator</text><rect class=\"scr\" x=\"0\" y=\"24\" width=\"250\" height=\"150\" rx=\"6\"/><text class=\"txt\" x=\"16\" y=\"72\" style=\"font-size:18px\">The Long Road</text><rect class=\"ui\" x=\"16\" y=\"84\" width=\"120\" height=\"7\" rx=\"3\"/><rect class=\"accent\" x=\"16\" y=\"126\" width=\"104\" height=\"30\" rx=\"6\"/><text class=\"on-accent\" x=\"68\" y=\"146\" text-anchor=\"middle\">Watch now</text><text class=\"lbl\" x=\"270\" y=\"14\">Test TV</text><rect class=\"scr\" x=\"262\" y=\"24\" width=\"258\" height=\"158\"/><text class=\"txt\" x=\"272\" y=\"72\" style=\"font-size:18px\">The Long Road</text><rect class=\"ui\" x=\"272\" y=\"84\" width=\"120\" height=\"7\" rx=\"3\"/><rect class=\"accent\" x=\"262\" y=\"146\" width=\"104\" height=\"30\" rx=\"6\"/><text class=\"on-accent\" x=\"314\" y=\"166\" text-anchor=\"middle\">Watch now</text><rect class=\"bez\" x=\"270\" y=\"24\" width=\"250\" height=\"150\" rx=\"4\"/><rect x=\"270\" y=\"24\" width=\"250\" height=\"150\" rx=\"4\" fill=\"none\" stroke=\"#0b1f19\" stroke-width=\"2\"/>"
+ },
+ "distance-3": {
+  "box": "0 0 520 190",
+  "caption": "The focused poster grows, and the row's container crops its top, bottom, and focus outline.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"520\" height=\"190\" rx=\"10\"/><text class=\"sm\" x=\"18\" y=\"30\">Popular</text><rect class=\"card\" x=\"22\" y=\"52\" width=\"66\" height=\"88\" rx=\"5\"/><rect class=\"card\" x=\"100\" y=\"52\" width=\"66\" height=\"88\" rx=\"5\"/><rect class=\"card\" x=\"288\" y=\"52\" width=\"66\" height=\"88\" rx=\"5\"/><rect class=\"card\" x=\"366\" y=\"52\" width=\"66\" height=\"88\" rx=\"5\"/><rect class=\"card\" x=\"444\" y=\"52\" width=\"66\" height=\"88\" rx=\"5\"/><rect class=\"card2\" x=\"176\" y=\"34\" width=\"92\" height=\"122\" rx=\"6\"/><rect class=\"foc\" x=\"172\" y=\"30\" width=\"100\" height=\"130\" rx=\"8\"/><rect class=\"scr\" x=\"160\" y=\"18\" width=\"124\" height=\"22\"/><rect class=\"scr\" x=\"160\" y=\"150\" width=\"124\" height=\"20\"/><rect class=\"dash\" x=\"10\" y=\"40\" width=\"500\" height=\"110\" rx=\"4\"/><path class=\"warn\" d=\"M172 40H272M172 150H272\"/><text class=\"sm\" x=\"510\" y=\"176\" text-anchor=\"end\">dashed line: the row's visible area</text>"
+ },
+ "player-2": {
+  "box": "0 0 520 236",
+  "caption": "The controls appear while two lines of captions are on screen.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"520\" height=\"236\" rx=\"10\"/><circle class=\"card2\" cx=\"150\" cy=\"80\" r=\"44\" opacity=\".55\"/><rect class=\"card\" x=\"300\" y=\"40\" width=\"150\" height=\"110\" rx=\"8\" opacity=\".6\"/><rect x=\"146\" y=\"138\" width=\"228\" height=\"24\" rx=\"3\" fill=\"#000\" opacity=\".65\"/><text class=\"txt\" x=\"260\" y=\"155\" text-anchor=\"middle\">I told you we'd be late.</text><rect x=\"196\" y=\"164\" width=\"128\" height=\"24\" rx=\"3\" fill=\"#000\" opacity=\".65\"/><text class=\"txt\" x=\"260\" y=\"181\" text-anchor=\"middle\">[distant siren]</text><rect x=\"0\" y=\"160\" width=\"520\" height=\"76\" fill=\"#0b1f19\" opacity=\".94\"/><rect class=\"ui\" x=\"20\" y=\"180\" width=\"480\" height=\"5\" rx=\"2\"/><rect class=\"accent\" x=\"20\" y=\"180\" width=\"176\" height=\"5\" rx=\"2\"/><circle cx=\"196\" cy=\"182.5\" r=\"7\" fill=\"#eef4e4\"/><path d=\"M24 202v18l15-9z\" fill=\"#eef4e4\"/><text class=\"sm\" x=\"52\" y=\"216\">41:12 / 1:52:40</text><rect class=\"ui\" x=\"388\" y=\"200\" width=\"52\" height=\"22\" rx=\"5\"/><text class=\"sm\" x=\"414\" y=\"215\" text-anchor=\"middle\">CC</text><rect class=\"ui\" x=\"448\" y=\"200\" width=\"52\" height=\"22\" rx=\"5\"/><text class=\"sm\" x=\"474\" y=\"215\" text-anchor=\"middle\">Audio</text>"
+ },
+ "live-2": {
+  "box": "0 0 520 150",
+  "caption": "What the stream looks like after the viewer rewinds a live match by eight minutes.",
+  "svg": "<text class=\"lbl\" x=\"0\" y=\"16\">Match, 20:00–21:00</text><rect x=\"0\" y=\"30\" width=\"520\" height=\"12\" rx=\"6\" fill=\"#dce2d7\"/><rect x=\"0\" y=\"30\" width=\"364\" height=\"12\" rx=\"6\" fill=\"#9fb38a\"/><path d=\"M364 22V52\" stroke=\"#c2503f\" stroke-width=\"2.5\"/><text class=\"lbl\" x=\"364\" y=\"16\" text-anchor=\"middle\">broadcast now · 20:42</text><circle cx=\"295\" cy=\"36\" r=\"9\" fill=\"#173c31\" stroke=\"#fff\" stroke-width=\"2\"/><text class=\"lbl\" x=\"295\" y=\"96\" text-anchor=\"middle\">viewer's playback · 20:34</text><path class=\"arr\" d=\"M295 50V80\"/><path class=\"arr\" d=\"M295 116H364M295 110V122M364 110V122\"/><text class=\"lbl\" x=\"329.5\" y=\"138\" text-anchor=\"middle\">8 min</text><text class=\"lbl\" x=\"0\" y=\"138\">20:00</text><text class=\"lbl\" x=\"520\" y=\"138\" text-anchor=\"end\">21:00</text>"
+ },
+ "live-3": {
+  "box": "0 0 520 200",
+  "caption": "Focus is on a 90-minute film. The yellow line is the current time. The viewer presses Down to the channel with 15-minute programs.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"520\" height=\"200\" rx=\"10\"/><text class=\"sm\" x=\"106\" y=\"20\">20:00</text><text class=\"sm\" x=\"211\" y=\"20\">20:30</text><text class=\"sm\" x=\"316\" y=\"20\">21:00</text><text class=\"sm\" x=\"421\" y=\"20\">21:30</text><text class=\"txt\" x=\"12\" y=\"62\" style=\"font-size:12px\">Cinema</text><rect class=\"ui\" x=\"102\" y=\"34\" width=\"311\" height=\"50\" rx=\"4\"/><text class=\"txt\" x=\"114\" y=\"56\">The Long Road</text><text class=\"sm\" x=\"114\" y=\"74\">20:00 – 21:30</text><rect class=\"foc\" x=\"99\" y=\"31\" width=\"317\" height=\"56\" rx=\"6\"/><rect class=\"ui\" x=\"419\" y=\"34\" width=\"101\" height=\"50\" rx=\"4\"/><text class=\"txt\" x=\"429\" y=\"62\" style=\"font-size:12px\">Late Show</text><text class=\"txt\" x=\"12\" y=\"120\" style=\"font-size:12px\">News 24</text><rect class=\"ui\" x=\"102\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"107\" y=\"121\" style=\"font-size:10px\">News</text><rect class=\"ui\" x=\"154.5\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"159.5\" y=\"121\" style=\"font-size:10px\">Markets</text><rect class=\"ui\" x=\"207\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"212\" y=\"121\" style=\"font-size:10px\">Weather</text><rect class=\"ui\" x=\"259.5\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"264.5\" y=\"121\" style=\"font-size:10px\">News</text><rect class=\"ui\" x=\"312\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"317\" y=\"121\" style=\"font-size:10px\">Tech</text><rect class=\"ui\" x=\"364.5\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"369.5\" y=\"121\" style=\"font-size:10px\">News</text><rect class=\"ui\" x=\"417\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"422\" y=\"121\" style=\"font-size:10px\">World</text><rect class=\"ui\" x=\"469.5\" y=\"94\" width=\"49\" height=\"46\" rx=\"4\"/><text class=\"sm\" x=\"474.5\" y=\"121\" style=\"font-size:10px\">News</text><text class=\"txt\" x=\"12\" y=\"176\" style=\"font-size:12px\">Sport</text><rect class=\"ui\" x=\"102\" y=\"150\" width=\"206\" height=\"40\" rx=\"4\"/><text class=\"txt\" x=\"114\" y=\"175\" style=\"font-size:12px\">Match day</text><rect class=\"ui\" x=\"312\" y=\"150\" width=\"208\" height=\"40\" rx=\"4\"/><text class=\"txt\" x=\"324\" y=\"175\" style=\"font-size:12px\">Studio</text><path class=\"now\" d=\"M240 26V200\"/><path d=\"M234 26h12l-6 7z\" fill=\"#f0c75e\"/>"
+ },
+ "platforms-5": {
+  "box": "0 0 520 210",
+  "caption": "The Magic Remote pointer rests on the second poster. The viewer then presses Right.",
+  "svg": "<rect class=\"scr\" x=\"0\" y=\"0\" width=\"520\" height=\"160\" rx=\"10\"/><text class=\"sm\" x=\"24\" y=\"28\">New releases</text><rect class=\"card\" x=\"24\" y=\"40\" width=\"72\" height=\"100\" rx=\"5\"/><rect class=\"card\" x=\"112\" y=\"40\" width=\"72\" height=\"100\" rx=\"5\"/><rect class=\"card\" x=\"200\" y=\"40\" width=\"72\" height=\"100\" rx=\"5\"/><rect class=\"card\" x=\"288\" y=\"40\" width=\"72\" height=\"100\" rx=\"5\"/><rect class=\"card\" x=\"376\" y=\"40\" width=\"72\" height=\"100\" rx=\"5\"/><rect class=\"card\" x=\"464\" y=\"40\" width=\"56\" height=\"100\" rx=\"5\"/><rect class=\"hover\" x=\"109\" y=\"37\" width=\"78\" height=\"106\" rx=\"7\"/><path d=\"M150 92v28l7-6 5 11 6-3-5-11h9z\" fill=\"#fff\" stroke=\"#173c31\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><rect x=\"196\" y=\"174\" width=\"128\" height=\"30\" rx=\"15\" fill=\"#fff\" stroke=\"#b9c6ad\"/><text class=\"lbl\" x=\"260\" y=\"194\" text-anchor=\"middle\">Right ▸ pressed</text>"
+ },
+ "access-6": {
+  "box": "0 0 520 196",
+  "caption": "The same card before and after the viewer turns on the TV's large-text setting.",
+  "svg": "<text class=\"lbl\" x=\"0\" y=\"14\">Default text size</text><rect class=\"scr\" x=\"0\" y=\"24\" width=\"250\" height=\"168\" rx=\"8\"/><rect class=\"card2\" x=\"16\" y=\"40\" width=\"218\" height=\"92\" rx=\"6\"/><text class=\"txt\" x=\"16\" y=\"156\" style=\"font-size:15px\">The Long Way Home</text><text class=\"sm\" x=\"16\" y=\"176\" style=\"font-size:11px\">Drama · 2024 · 1 h 52 min</text><text class=\"lbl\" x=\"270\" y=\"14\">Large text setting on</text><rect class=\"scr\" x=\"270\" y=\"24\" width=\"250\" height=\"168\" rx=\"8\"/><rect class=\"card2\" x=\"286\" y=\"40\" width=\"218\" height=\"92\" rx=\"6\"/><text class=\"txt\" x=\"286\" y=\"160\" style=\"font-size:21px\">The Long Wa…</text><text class=\"sm\" x=\"286\" y=\"183\" style=\"font-size:15px\">Drama · 2024 · 1…</text>"
+ }
+};
+function figure(id){const f=FIGURES[id];if(!f)return '';return '<figure class="q-figure"><svg class="fig" viewBox="'+f.box+'" aria-hidden="true" focusable="false">'+f.svg+'</svg><figcaption>'+escapeHtml(f.caption)+'</figcaption></figure>';}
 const $=function(selector,root){return (root||document).querySelector(selector);};
 const $$=function(selector,root){return Array.from((root||document).querySelectorAll(selector));};
 const icon=function(name){return '<svg class="icon" aria-hidden="true"><use href="#i-'+name+'"/></svg>';};
@@ -753,7 +1102,7 @@ let dialogTrigger=null;
 let reviewFilter='all';
 function shuffled(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function isValidSession(s){
- if(!s||s.version!==1||!Array.isArray(s.ids)||!s.ids.length||s.ids.length>40||new Set(s.ids).size!==s.ids.length)return false;
+ if(!s||s.version!==1||!Array.isArray(s.ids)||!s.ids.length||s.ids.length>BANK.length||new Set(s.ids).size!==s.ids.length)return false;
  if(!s.ids.every(function(id){return !!qById[id];})||!Number.isInteger(s.pos)||s.pos<0||s.pos>=s.ids.length)return false;
  if(!['study','test'].includes(s.feedback)||!Object.hasOwn(LABELS,s.mode)||!s.orders||!s.answers||!s.selections)return false;
  return s.ids.every(function(id){const order=s.orders[id];return Array.isArray(order)&&order.length===4&&new Set(order).size===4&&order.every(function(x){return Number.isInteger(x)&&x>=0&&x<=3;})&&[s.answers[id],s.selections[id]].every(function(x){return x===undefined||(Number.isInteger(x)&&x>=0&&x<=3);});});
@@ -797,7 +1146,7 @@ function updateConfig(){
  $('#topic-picker').hidden=config.mode!=='practice';
  $('#feedback-note').innerHTML=config.feedback==='study'?'An explanation after<br>every answer.':'All explanations in<br>your final review.';
  $$('[data-topic]').forEach(function(b){b.setAttribute('aria-pressed',String(config.topics.includes(b.dataset.topic)));});
- const count=config.topics.length*4;
+ const count=BANK.filter(function(q){return config.topics.includes(q.topic);}).length;
  $('#picker-count').textContent=count+' questions';
  $('#practice-meta').textContent=config.mode==='practice'?count+' questions · '+config.topics.length+' topic'+(config.topics.length===1?'':'s'):'Choose your topics';
  $('#start-btn').disabled=config.mode==='practice'&&count===0;
@@ -862,7 +1211,7 @@ function renderQuestion(moveFocus){
   const topicIds=state.ids.filter(function(qid){return qById[qid].topic===topic.id;}),done=topicIds.filter(function(qid){return state.answers[qid]!==undefined;}).length;
   return '<div class="track-row '+(topic.id===q.topic?'active':done===topicIds.length?'done':'')+'" '+(topic.id===q.topic?'aria-current="true"':'')+'>'+icon(done===topicIds.length?'check':topic.icon)+'<span>'+topic.name+'</span><small>'+done+'/'+topicIds.length+'</small></div>';
  }).join('');
- let html='<div class="question-meta"><span class="pill">'+icon(t.icon)+t.name+'</span><span class="question-kicker">'+escapeHtml(q.title)+'</span></div><h1 class="question-title" tabindex="-1" id="question-title">'+escapeHtml(q.prompt)+'</h1><p class="question-hint" id="answer-hint">'+(answered?'Answer locked for this attempt.':'Choose the best answer. One answer is correct.')+'</p><div class="answers" role="radiogroup" aria-labelledby="question-title" aria-describedby="answer-hint">';
+ let html='<div class="question-meta"><span class="pill">'+icon(t.icon)+t.name+'</span><span class="question-kicker">'+escapeHtml(q.title)+'</span></div><h1 class="question-title" tabindex="-1" id="question-title">'+escapeHtml(q.prompt)+'</h1>'+figure(id)+'<p class="question-hint" id="answer-hint">'+(answered?'Answer locked for this attempt.':'Choose the best answer. One answer is correct.')+'</p><div class="answers" role="radiogroup" aria-labelledby="question-title" aria-describedby="answer-hint">';
  state.orders[id].forEach(function(original,i){
   const selected=state.selections[id]===original,revealed=answered&&state.feedback==='study';let status='',cls='';
   if(revealed){if(original===q.answer){cls='correct';status=icon('check')+'<span>Correct answer</span>';}else if(original===state.answers[id]){cls='wrong';status=icon('close')+'<span>Your answer</span>';}}
@@ -921,7 +1270,7 @@ function renderReview(){
  const ids=state.ids.filter(function(id){return reviewFilter==='all'||state.answers[id]!==qById[id].answer;});
  $('#review-list').innerHTML=ids.length?ids.map(function(id){
  const q=qById[id],selected=state.answers[id],correct=selected===q.answer;
- return '<details class="review-item"><summary><span class="review-symbol '+(correct?'':'missed')+'">'+icon(correct?'check':'close')+'</span><span class="review-summary"><small>QUESTION '+(state.ids.indexOf(id)+1)+' · '+tById[q.topic].name+' · '+(correct?'Correct':'Incorrect')+'</small>'+escapeHtml(q.prompt)+'</span>'+icon('chevron').replace('class="icon"','class="icon review-chevron"')+'</summary><div class="review-body"><div class="review-answer '+(correct?'':'missed')+'"><strong>Your answer</strong>'+escapeHtml(q.options[selected])+'</div>'+(!correct?'<div class="review-answer"><strong>Correct answer</strong>'+escapeHtml(q.options[q.answer])+'</div>':'')+'<p>'+escapeHtml(q.explanation)+'</p><div class="takeaway">'+escapeHtml(q.takeaway)+'</div></div></details>';
+ return '<details class="review-item"><summary><span class="review-symbol '+(correct?'':'missed')+'">'+icon(correct?'check':'close')+'</span><span class="review-summary"><small>QUESTION '+(state.ids.indexOf(id)+1)+' · '+tById[q.topic].name+' · '+(correct?'Correct':'Incorrect')+'</small>'+escapeHtml(q.prompt)+'</span>'+icon('chevron').replace('class="icon"','class="icon review-chevron"')+'</summary><div class="review-body">'+figure(id)+'<div class="review-answer '+(correct?'':'missed')+'"><strong>Your answer</strong>'+escapeHtml(q.options[selected])+'</div>'+(!correct?'<div class="review-answer"><strong>Correct answer</strong>'+escapeHtml(q.options[q.answer])+'</div>':'')+'<p>'+escapeHtml(q.explanation)+'</p><div class="takeaway">'+escapeHtml(q.takeaway)+'</div></div></details>';
  }).join(''):'<div class="empty-review">'+icon('check')+' Nothing to revisit in this session. Nicely done. Try the full quiz for more scenarios.</div>';
 }
 function downloadResults(){
@@ -942,14 +1291,17 @@ const SOURCES=[
  ['Android Developers','TV navigation','https://developer.android.com/training/tv/get-started/navigation'],
  ['Android Developers','Playback controls on TV','https://developer.android.com/training/tv/playback/controls'],
  ['Samsung Developer','Input methods','https://developer.samsung.com/smarttv/design/input-methods.html'],
+ ['LG webOS TV','Magic Remote','https://webostv.developer.lge.com/develop/guides/magic-remote'],
+ ['Amazon Fire TV','Back button and recommendations FAQ','https://developer.amazon.com/docs/fire-tv/pmr-best-practices-faq.html'],
  ['Samsung Developer','Design principles','https://developer.samsung.com/smarttv/design/design-principles.html'],
  ['Amazon Developer','Fire TV design and user experience','https://www.developer.amazon.com/docs/fire-tv/design-and-user-experience-guidelines.html'],
- ['W3C','Web Content Accessibility Guidelines 2.2','https://www.w3.org/TR/WCAG22/']
+ ['W3C','Web Content Accessibility Guidelines 2.2','https://www.w3.org/TR/WCAG22/'],
+ ['Android Developers','Watch Next on the home screen','https://developer.android.com/training/tv/discovery/watch-next-add-programs']
 ];
 function openResource(kind){
- if(kind==='help')openDialog('A little focus. A lot to learn.','<h3>Choose your pace</h3><p><strong>Essentials</strong> gives you 12 randomized questions with every topic represented. <strong>Deep dive</strong> covers all 40. <strong>Topic practice</strong> includes all four questions from each topic you select.</p><h3>Choose how you learn</h3><p><strong>Study mode</strong> explains each answer right away. <strong>Test mode</strong> saves the explanations for your results. There is no timer and no penalty for taking your time.</p><h3>One answer, one point</h3><p>Choose the best answer and check or submit it. A submitted answer is locked for that attempt. You can revisit completed questions using Previous or the numbered question map. Results show your score, topic breakdown, and every explanation.</p><h3>Keyboard controls</h3><div class="keys"><span><kbd>1</kbd>–<kbd>4</kbd></span><span>Choose an answer in its displayed order.</span><span><kbd>↑</kbd><kbd>↓</kbd></span><span>Move and select within an answer group.</span><span><kbd>Tab</kbd></span><span>Move between controls.</span><span><kbd>Enter</kbd><kbd>Space</kbd></span><span>Activate the focused control.</span><span><kbd>Esc</kbd></span><span>Close this dialog.</span></div><div class="note-box">Your latest session is saved in this browser when local storage is available. New sessions, retakes, and missed-question practice replace that saved session. Download results first if you want to keep them.</div>');
+ if(kind==='help')openDialog('A little focus. A lot to learn.','<h3>Choose your pace</h3><p><strong>Essentials</strong> gives you 12 randomized questions with every topic represented. <strong>Deep dive</strong> covers all 60. <strong>Topic practice</strong> includes every question from each topic you select.</p><h3>Choose how you learn</h3><p><strong>Study mode</strong> explains each answer right away. <strong>Test mode</strong> saves the explanations for your results. There is no timer and no penalty for taking your time.</p><h3>One answer, one point</h3><p>Choose the best answer and check or submit it. A submitted answer is locked for that attempt. You can revisit completed questions using Previous or the numbered question map. Results show your score, topic breakdown, and every explanation.</p><h3>Keyboard controls</h3><div class="keys"><span><kbd>1</kbd>–<kbd>4</kbd></span><span>Choose an answer in its displayed order.</span><span><kbd>↑</kbd><kbd>↓</kbd></span><span>Move and select within an answer group.</span><span><kbd>Tab</kbd></span><span>Move between controls.</span><span><kbd>Enter</kbd><kbd>Space</kbd></span><span>Activate the focused control.</span><span><kbd>Esc</kbd></span><span>Close this dialog.</span></div><div class="note-box">Your latest session is saved in this browser when local storage is available. New sessions, retakes, and missed-question practice replace that saved session. Download results first if you want to keep them.</div>');
  if(kind==='privacy')openDialog('Your learning stays with you.','<h3>Local progress</h3><p>This file runs entirely in your browser. It has no accounts, tracking scripts, external fonts, or required network requests. Your latest session is stored locally when your browser permits it.</p><h3>Different devices, separate progress</h3><p>The same HTML works as a local file or on GitHub Pages. Each browser and device keeps its own progress; sessions do not sync. Moving from a local file to the hosted version also starts a separate save.</p><h3>When storage is unavailable</h3><p>You can still finish the quiz in the current tab. Closing or refreshing the tab may clear that session. Save your results as a text file to keep a copy.</p><h3>External references</h3><p>The reading links in Field notes open official documentation in a new tab. They need an internet connection and follow their respective sites’ privacy policies.</p>');
- if(kind==='notes')openDialog('Field notes for the living room.','<h3>Keep these principles close</h3><ul><li><strong>Orientation comes first.</strong> Make focus visible, movement predictable, and return paths familiar.</li><li><strong>Distance changes the design.</strong> Test type, density, contrast, and safe areas on a TV from the sofa.</li><li><strong>Discovery is a viewing task.</strong> Useful structure and honest availability help people choose with confidence.</li><li><strong>Playback is the product.</strong> Seeking, captions, live position, and recovery deserve the same care as browsing.</li><li><strong>Measure the whole experience.</strong> Pair meaningful play with quality, access, and viewer control.</li></ul><h3>Go deeper with official guidance</h3><p>These are supporting references, not a single universal TV specification. Check current requirements for each platform and device.</p>'+SOURCES.map(function(s){return '<a class="source-link" href="'+s[2]+'" target="_blank" rel="noopener noreferrer"><span>'+s[1]+'<small>'+s[0]+'</small></span>'+icon('external')+'</a>';}).join('')+'<div class="note-box"><strong>About this question bank</strong><br>40 original scenarios cover the requested TV UX and OTT syllabus. The linked source conversation exposed placeholders instead of its guide text, so this is a reconstruction of the topic coverage, supported by the references above. It is not a verbatim adaptation. Reference check: 23 October 2026.</div>');
+ if(kind==='notes')openDialog('Field notes for the living room.','<h3>Keep these principles close</h3><ul><li><strong>Orientation comes first.</strong> Make focus visible, movement predictable, and return paths familiar.</li><li><strong>Distance changes the design.</strong> Test type, density, contrast, and safe areas on a TV from the sofa.</li><li><strong>Discovery is a viewing task.</strong> Useful structure and honest availability help people choose with confidence.</li><li><strong>Playback is the product.</strong> Seeking, captions, live position, and recovery deserve the same care as browsing.</li><li><strong>Measure the whole experience.</strong> Pair meaningful play with quality, access, and viewer control.</li></ul><h3>Go deeper with official guidance</h3><p>These are supporting references, not a single universal TV specification. Check current requirements for each platform and device.</p>'+SOURCES.map(function(s){return '<a class="source-link" href="'+s[2]+'" target="_blank" rel="noopener noreferrer"><span>'+s[1]+'<small>'+s[0]+'</small></span>'+icon('external')+'</a>';}).join('')+'<div class="note-box"><strong>About this question bank</strong><br>60 original scenarios built from a long-form TV & OTT UX guide, then checked and extended against the official references above. Questions with a diagram show the situation, not the answer. Reference check: 29 October 2026.</div>');
 }
 function handleKeys(e){
  if(e.altKey||e.ctrlKey||e.metaKey)return;
