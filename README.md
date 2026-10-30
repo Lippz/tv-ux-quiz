@@ -7,6 +7,7 @@ A self-contained, responsive English-language learning quiz about TV UX and OTT 
 - Study mode with immediate explanations and test mode with a final review
 - Scoring, topic breakdowns, missed-question retakes, and downloadable results
 - Keyboard controls and browser-local session saving
+- Light and dark theme, following the system setting until you pick one
 
 Open `index.html` directly in a browser to use it offline.
 
