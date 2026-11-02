@@ -4,6 +4,7 @@ A self-contained, responsive English-language learning quiz about TV UX and OTT 
 
 - 60 scenario-based questions across 10 topics
 - Essentials, full quiz, and topic practice
+- A knowledge base (`#kb`) with every topic, platform differences, a developer handoff checklist, a glossary and an interview answer
 - Study mode with immediate explanations and test mode with a final review
 - Scoring, topic breakdowns, missed-question retakes, and downloadable results
 - Keyboard controls and browser-local session saving
